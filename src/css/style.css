@@ -1,0 +1,81 @@
+:root{
+    --primary-color: black;
+    --secondary-color: yellow;
+    --third-color: white;
+    --fourth-color: black;
+    --fifth-color: black;
+    --sixth-color: white;
+    --text-color: white;
+  }
+  
+  *{
+    margin: auto;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+  }
+  
+  /* Styles the navigation bar */
+  .nav-bar{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: flex-end;
+    border: solid 2px;
+  }
+  
+  .nav-list-element{
+    list-style-type: none;
+    text-decoration: none;
+  }
+  
+  .nav-list-element:hover {
+    color: black;
+    background-color: white;
+  }
+  
+  /* Styles the h1 main-title content */
+  .main-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: solid 2px;
+  }
+  
+  .image-container{
+    background-image:url("../images/Poss-Image-2.jpg");
+    /* background-color: yellow; */
+  }
+  
+  
+  
+  footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .image-container-header{
+    height: 500px;
+    width: 200px;
+    background: transparent;
+    size: 200px;
+    font-size: 100px;
+  }
+
+  .image-container-text{
+    background: transparent;
+    size: 200px;
+  }
+
+
+  .top-donators-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .row-of-logos{
+    list-style-type: none;
+  }
+  
+  
