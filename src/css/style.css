@@ -13,6 +13,7 @@
     margin: auto;
     background-color: var(--primary-color);
     color: var(--text-color);
+    font-family: 'Varela Round', sans-serif;
   }
   
   /* Styles the navigation bar */
@@ -76,6 +77,16 @@
     size: 200px;
     padding-bottom: 50px;
     font-size: 35px;
+  }
+
+  /* Styles the mission Statement */
+  .mission-statement{
+    border: solid 2px;
+  }
+
+  /* Styles the top donators section */
+  .top-donators-section{
+    border: solid 2px;
   }
 
 
