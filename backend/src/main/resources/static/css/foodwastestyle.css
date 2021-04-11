@@ -1,0 +1,32 @@
+* {
+   box-sizing: border-box; 
+   padding: 1%;
+   margin: 1%;
+}
+ header  {
+     display: flex;
+     justify-content: center;
+     background: burlywood;
+
+}
+
+main
+._container {
+    height: 1%;
+    border: 1px solid blueviolet;
+    justify-content: left;
+
+}
+._container h1{
+    display: flex;
+    justify-content: center;
+}
+
+._container1{
+    height: 1%;
+    border: 1px solid blueviolet;
+}
+._container1 h1 {
+    display: flex;
+    justify-content: center;
+}
