@@ -1,0 +1,111 @@
+/* Creates the CSS Variables */
+:root{
+    --primary-color: black;
+    --secondary-color: #F49390;
+    --third-color: white;
+    --fourth-color: black;
+    --fifth-color: black;
+    --sixth-color: white;
+    --text-color: white;
+  }
+  /* Base Style Settings for CSS */
+  *{
+    margin: auto;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-family: 'Varela Round', sans-serif;
+  }
+  
+  /* Styles the navigation bar */
+  .nav-bar{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: flex-end;
+    border: solid 2px;
+  }
+
+  /* Styles the list elements within the navigation bar */
+  .nav-list-element{
+    list-style-type: none;
+    text-decoration: none;
+  }
+
+  /* Styles the list elements in the navigation bar on hover */
+  .nav-list-element:hover {
+    color: black;
+    background-color: white;
+  }
+  
+  /* Styles the h1 main-title content */
+  .main-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: solid 2px;
+  }
+  
+  /* Styles the image container */
+  .image-container{
+    background-image:url("../images/Poss-Image-2.jpg");
+    /* background-color: yellow; */
+  }
+  
+  
+  /* Styles the footer */
+  footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--primary-color)
+  }
+
+  /* Styles the image container's header */
+  .image-container-header{
+    height: 500px;
+    width: 200px;
+    background: transparent;
+    size: 200px;
+    font-size: 200px;
+    margin-left: 50px;
+  }
+
+
+  /* Styles the text within the image container */
+  .image-container-text{
+    background: transparent;
+    size: 200px;
+    padding-bottom: 50px;
+    font-size: 35px;
+  }
+
+  /* Styles the mission Statement */
+  .mission-statement{
+    border: solid 2px;
+  }
+
+  /* Styles the top donators section */
+  .top-donators-section{
+    border: solid 2px;
+  }
+
+
+  /* Styles the top donators header */
+  .top-donators-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  /* Styles the div on homepage that contains the row of logos */
+  .row-of-logos{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+  
+  
+  
+  
