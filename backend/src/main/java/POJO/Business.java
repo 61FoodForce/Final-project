@@ -27,9 +27,16 @@ public class Business {
         this.donations = donations;
     }
 
-    public Business(String name){
+    public Business(String name, String streetAddress, String city, String state, String phoneNumber, Boolean isCharity){
         this.name = name;
+        this.streetAddress = streetAddress;
+        this.city = city;
+        this.state = state;
+        this.phoneNumber = phoneNumber;
+        this.isCharity = isCharity;
+
     }
+
 
     public Business() {
 

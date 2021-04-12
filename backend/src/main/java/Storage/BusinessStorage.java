@@ -19,4 +19,6 @@ public class BusinessStorage {
     public void deleteBusinessById(Long id) {businessRepo.deleteById(id);}
 
     public Optional<Business> retrieveDonationById(Long id) {return businessRepo.findById(id);}
+
+    public Optional<Business> retrieveBusinessById(long id) {return businessRepo.findById(id);}
 }

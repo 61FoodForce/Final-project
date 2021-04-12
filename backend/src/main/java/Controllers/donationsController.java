@@ -1,10 +1,12 @@
 package Controllers;
 
+import POJO.Business;
+import POJO.Donation;
+import Storage.BusinessStorage;
 import Storage.DonationStorage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class donationsController {
@@ -16,8 +18,19 @@ public class donationsController {
     public String displayDonations(@PathVariable long id, Model model){
         model.addAttribute("donations", donationStorage.retrieveDonationById(id));
         return "";
-
 }
+    @PostMapping("/donationform")
+    public String addDonation(@PathVariable long id, @RequestParam String name, @RequestParam Business business, @RequestParam int foodQuantity){
+        Donation donationToAdd = new Donation(name, business, foodQuantity);
+        donationStorage.saveDonation(donationToAdd);
+        return"redirect:";
+    }
+    @DeleteMapping("{id}")
+    public String deleteDonation(@PathVariable long id){
+        donationStorage.deleteDonationById(id);
+        return"redirect:";
+    }
+
 
 
 
