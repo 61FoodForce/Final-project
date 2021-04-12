@@ -1,24 +1,38 @@
 package POJO;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
+import java.util.Collection;
+import java.util.Collections;
 
+@Entity
 public class Business {
 
     @Id
     @GeneratedValue
     private Long id;
     private String name;
-    private String business;
+    private String streetAddress;
+    private String city;
+    private String state;
+    private String phoneNumber;
+    private Boolean isCharity = false;
+    @OneToMany(mappedBy = "business")
+    private Collection<Donation> donations = Collections.EMPTY_LIST;
 
-    @ManyToMany
-    private String stringBusiness;
-    protected Business(){}
+    public Collection<Donation> getDonations() {
+        return donations;
+    }
 
-    public Business(String name, String business){
+    public void setDonations(Collection<Donation> donations) {
+        this.donations = donations;
+    }
+
+    public Business(String name){
         this.name = name;
-        this.business = business;
+    }
+
+    public Business() {
+
     }
 
     public Long getId() {
@@ -29,11 +43,48 @@ public class Business {
         return name;
     }
 
-    public String getBusiness() {
-        return business;
+
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getStringBusiness() {
-        return stringBusiness;
+    public String getStreetAddress() {
+        return streetAddress;
+    }
+
+    public void setStreetAddress(String streetAddress) {
+        this.streetAddress = streetAddress;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public Boolean getCharity() {
+        return isCharity;
+    }
+
+    public void setCharity(Boolean charity) {
+        isCharity = charity;
     }
 }
