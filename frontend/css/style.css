@@ -1,7 +1,7 @@
 /* Creates the CSS Variables */
 :root{
-    --primary-color: #206a5d;
-    --secondary-color:  #81b214;
+    --primary-color: #81b214;
+    --secondary-color:  #f58634;
     --third-color: #ffcc29;
     --fourth-color: #f58634;
     --fifth-color: black;
@@ -55,12 +55,12 @@
 
   .donation-header{
     text-align: center;
-    padding: 10px;
-    background-color: transparent;
+    padding: 20px;
+    background-color: rgba(28, 29, 28, 0.4);
   }
 
   .donation-page{
-    background-image:url(../images/groceries2.jpg);
+    background-image:url(../images/veggies.jpg);
     background-size: 100%;
     height: 650px;
     align-items: center;
@@ -75,7 +75,8 @@
   }
 
   input{
-    color: white;
+    background-color: white;
+    color: var(--primary-color);
   }
 
   select{
@@ -98,7 +99,8 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: var(--secondary-color)
+    background-color: var(--secondary-color);
+    height: 40px;
   }
 
   .footer-text{
@@ -170,8 +172,74 @@
   .luckys-logo{
     width: 200px;
   }
+
+  .food-waste-header{
+    height: 200px;
+    width: 400px;
+    background: transparent;
+    font-size: 75px;
+    margin-left: 25px;
+    padding-bottom: 50px;
+  }
+
+  .food-waste-container{
+    background-image: url("../images/rottenfruit.jpg");
+    background-size: 100% auto;
+    height: 500px;
+    background-position: center;
+  }
+
+  .food-waste-container-text{
+    background: rgba(28, 29, 28, 0.4);
+    margin-left: 10px;
+  }
  
+  .hunger-header{
+    height: 250px;
+    width: 200px;
+    background: transparent;
+    font-size: 75px;
+    margin-left: 25px;
+    padding-bottom: 50px;
+    padding-top: 10px;
+  }
   
+  .hunger-container{
+    background-image: url("../images/childcereal.jpg");
+    background-size: 100% auto;
+    height: 500px;
+    background-position: center;
+    
+  }
+
+  .hunger-container-text{
+    background: rgba(28, 29, 28, 0.4);
+    margin-left: 10px;
+  }
+
+  .hunger-question{
+    height: 100px;
+    background: var(--third-color)
+  }
+  .hunger-question-text{
+    background:var(--third-color);
+    padding-top: 33px;
+  }
   
-  
+  .food-to-people{
+    background: var(--primary-color);
+  }
+
+  .food-to-people-header{
+    background: var(--primary-color);
+    padding: 10px;
+  }
+
+  .food-to-people-text{
+    padding:10px;
+  }
+
+  script{
+    background-color:white;
+  }
   
