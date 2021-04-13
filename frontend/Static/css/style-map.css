@@ -1,0 +1,67 @@
+/* Creates the CSS Variables */
+:root{
+    --primary-color: #81b214;
+    --secondary-color:  #f58634;
+    --third-color: #ffcc29;
+    --fourth-color: #f58634;
+    --fifth-color: black;
+    --sixth-color: white;
+    --text-color: white;
+  }
+  /* Base Style Settings for CSS */
+  *{
+    margin: auto;
+    background-color:transparent;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+  }
+
+  /* Styles the navigation bar */
+  .nav-bar{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: flex-end;
+    border: solid 2px;
+    background-color: var(--primary-color);
+  }
+
+  /* Styles the list elements within the navigation bar */
+  .nav-list-element{
+    list-style-type: none;
+    text-decoration: none;
+  }
+
+  /* Styles the list elements in the navigation bar on hover */
+  .nav-list-element:hover {
+    color: black;
+    background-color: white;
+  }
+
+ .starting_line{
+      color: var(--secondary-color);
+      padding: 10px;
+  }
+
+  h2{
+    color: var(--primary-color);
+    padding: 10px;
+  }
+
+  p{
+    color:var(--secondary-color);
+    margin-left:10px;
+  }
+
+  footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    height: 40px;
+  }
+
+  .footer-text{
+    color: white;
+    background-color: var(--secondary-color)
+  }
