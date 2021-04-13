@@ -1,4 +1,4 @@
-package Controllers;
+package org.foodforce.mvcapp.Controllers;
 
 import org.foodforce.mvcapp.POJO.Business;
 import org.foodforce.mvcapp.Storage.BusinessStorage;
