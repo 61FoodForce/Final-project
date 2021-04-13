@@ -28,8 +28,8 @@ public class Populator implements CommandLineRunner {
 //        business1.setCharity(true);
         this.businessStorage.saveBusiness(business1);
 
-        Donation donation1 = new Donation("Beans", business1, 15);
-        donation1.setFoodUnit("CAN");
+        Donation donation1 = new Donation("Beans", business1, 15, Donation.Unit.CAN);
+        //donation1.setFoodUnit(Donation.Unit.CAN);
 //        donation1.setFoodQuantity(15);
         this.donationStorage.saveDonation(donation1);
 
