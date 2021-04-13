@@ -1,6 +1,4 @@
-package POJO;
-
-import org.springframework.core.SpringVersion;
+package org.foodforce.mvcapp.POJO;
 
 import javax.persistence.*;
 
@@ -22,20 +20,24 @@ public class Donation {
     }
 
     private int foodQuantity;
-    //private String foodUnit;
-    public enum unit{
-        can("can"),
-        lb("pounds");
+    private String foodUnit;
+//    //private String foodUnit;
+//    public enum Unit{
+//        CAN("Can"),
+//        POUND("Pounds")
+//
+////        can("can"),
+////        lb("pounds");
+////
+////        public String getLabel() {
+////            return label;
+////        }
+////
+////        private final String label;
+////        private unit(String label){
+////            this.label = label;
+//      }
 
-        public String getLabel() {
-            return label;
-        }
-
-        private final String label;
-        private unit(String label){
-            this.label = label;
-        }
-    }
 
     protected Donation(){}
 
@@ -56,6 +58,13 @@ public class Donation {
         return name;
     }
 
+    public String getFoodUnit() {
+        return foodUnit;
+    }
+
+    public void setFoodUnit(String foodUnit) {
+        this.foodUnit = foodUnit;
+    }
 
     public int getFoodQuantity() {
         return foodQuantity;

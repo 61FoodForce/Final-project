@@ -1,7 +1,7 @@
-package Storage;
+package org.foodforce.mvcapp.Storage;
 
-import POJO.Donation;
-import Repo.DonationRepo;
+import org.foodforce.mvcapp.POJO.Donation;
+import org.foodforce.mvcapp.Repo.DonationRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

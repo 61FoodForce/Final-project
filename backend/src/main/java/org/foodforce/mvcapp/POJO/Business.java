@@ -1,4 +1,4 @@
-package POJO;
+package org.foodforce.mvcapp.POJO;
 
 import javax.persistence.*;
 import java.util.Collection;

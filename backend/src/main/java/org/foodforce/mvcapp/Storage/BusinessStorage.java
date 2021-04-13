@@ -1,7 +1,7 @@
-package Storage;
+package org.foodforce.mvcapp.Storage;
 
-import POJO.Business;
-import Repo.BusinessRepo;
+import org.foodforce.mvcapp.POJO.Business;
+import org.foodforce.mvcapp.Repo.BusinessRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -18,5 +18,5 @@ public class BusinessStorage {
 
     public void deleteBusinessById(Long id) {businessRepo.deleteById(id);}
 
-    public Optional<Business> retrieveDonationById(Long id) {return businessRepo.findById(id);}
+    public Optional<Business> retrieveBusinessById(Long id) {return businessRepo.findById(id);}
 }
