@@ -20,18 +20,21 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Business business1 = new Business( "Mid Ohio food bank");
-        business1.setStreetAddress("755 South High Street");
-        business1.setCity("Columbus");
-        business1.setState("Ohio");
-        business1.setPhoneNumber("614-555-6700");
-        business1.setCharity(true);
-        businessStorage.saveBusiness(business1);
+        Business business1 = new Business( "Mid Ohio food bank", "755 South High Street", "Columbus", "Ohio", "614-555-6700", true);
+//        business1.setStreetAddress("755 South High Street");
+//        business1.setCity("Columbus");
+//        business1.setState("Ohio");
+//        business1.setPhoneNumber("614-555-6700");
+//        business1.setCharity(true);
+        this.businessStorage.saveBusiness(business1);
 
-        Donation donation1 = new Donation("Beans", business1);
+        Donation donation1 = new Donation("Beans", business1, 15);
         donation1.setFoodUnit("CAN");
-        donation1.setFoodQuantity(15);
-        donationStorage.saveDonation(donation1);
+//        donation1.setFoodQuantity(15);
+        this.donationStorage.saveDonation(donation1);
+
+
+
 
 
 
