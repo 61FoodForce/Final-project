@@ -11,7 +11,14 @@ public class Donation {
     @ManyToOne
     private Business business;
     private int foodQuantity;
-    private String foodUnit;
+    private Unit foodUnit;
+    public enum Unit{
+        CAN,
+        POUND,
+        CASE,
+        GALLONS
+    }
+
 //    //private String foodUnit;
 //    public enum Unit{
 //        CAN("Can"),
@@ -32,10 +39,11 @@ public class Donation {
 
     protected Donation(){}
 
-    public Donation(String itemName, Business business, int foodQuantity){
+    public Donation(String itemName, Business business, int foodQuantity, Unit foodUnit){
         this.name = itemName;
         this.business = business;
         this.foodQuantity = foodQuantity;
+        this.foodUnit = foodUnit;
     }
     public Business getBusiness() {
         return business;
@@ -57,11 +65,11 @@ public class Donation {
         return name;
     }
 
-    public String getFoodUnit() {
+    public Unit getFoodUnit() {
         return foodUnit;
     }
 
-    public void setFoodUnit(String foodUnit) {
+    public void setFoodUnit(Unit foodUnit) {
         this.foodUnit = foodUnit;
     }
 
