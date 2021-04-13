@@ -1,9 +1,8 @@
 package Controllers;
 
-import POJO.Business;
-import POJO.Donation;
-import Storage.BusinessStorage;
-import Storage.DonationStorage;
+import org.foodforce.mvcapp.POJO.Donation;
+import org.foodforce.mvcapp.POJO.Business;
+import org.foodforce.mvcapp.Storage.DonationStorage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;

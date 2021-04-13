@@ -1,7 +1,7 @@
 package Controllers;
 
-import POJO.Business;
-import Storage.BusinessStorage;
+import org.foodforce.mvcapp.POJO.Business;
+import org.foodforce.mvcapp.Storage.BusinessStorage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
