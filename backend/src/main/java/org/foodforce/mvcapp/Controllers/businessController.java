@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 
 @Controller
+@RequestMapping("/businesses")
 public class businessController {
     private BusinessStorage businessStorage;
 
