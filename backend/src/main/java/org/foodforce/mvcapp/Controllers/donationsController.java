@@ -22,11 +22,16 @@ public class donationsController {
         return "";
     }
 
-    @PostMapping("/donationform")
-    public String addDonation(@PathVariable long id, @RequestParam String name, @RequestParam Business business, @RequestParam int foodQuantity, @RequestParam int foodUnit) {
-        Donation donationToAdd = new Donation(name, business, foodQuantity, Donation.Unit.CAN);
+//    @PostMapping("/submitDonation")
+//    public String addDonation(@PathVariable long id, @RequestParam String name, @RequestParam Business business, @RequestParam int foodQuantity, @RequestParam int foodUnit) {
+//        Donation donationToAdd = new Donation(name, business, foodQuantity, Donation.Unit.CAN);
+//        donationStorage.saveDonation(donationToAdd);
+//        return "redirect:";
+    @PostMapping("/submitDonation")
+    public String addDonation(String _name, Business _business, int _foodQuantity) {
+        Donation donationToAdd = new Donation(_name, _business, _foodQuantity, Donation.Unit.CAN);
         donationStorage.saveDonation(donationToAdd);
-        return "redirect:";
+        return "donation-display";
     }
 
     @DeleteMapping("{id}")
