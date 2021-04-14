@@ -15,6 +15,7 @@ public class Business {
     private String city;
     private String state;
     private String phoneNumber;
+    private int totalItemsDonated = 0;
     private Boolean isCharity = false;
     @OneToMany(mappedBy = "business")
     private Collection<Donation> donations = Collections.EMPTY_LIST;
@@ -93,5 +94,13 @@ public class Business {
 
     public void setCharity(Boolean charity) {
         isCharity = charity;
+    }
+
+    public int getTotalItemsDonated() {
+        return totalItemsDonated;
+    }
+
+    public void setTotalItemsDonated(int totalItemsDonated) {
+        this.totalItemsDonated = totalItemsDonated;
     }
 }

@@ -16,7 +16,8 @@ public class Donation {
         CAN,
         POUND,
         CASE,
-        GALLONS
+        GALLONS,
+        BAG
     }
 
 //    //private String foodUnit;
@@ -36,10 +37,10 @@ public class Donation {
 ////            this.label = label;
 //      }
 
+//
+    public Donation(){}
 
-    protected Donation(){}
-
-    public Donation(String itemName, Business business, int foodQuantity, Unit foodUnit){
+    public Donation(String itemName, Business business, int foodQuantity,  Unit foodUnit){
         this.name = itemName;
         this.business = business;
         this.foodQuantity = foodQuantity;

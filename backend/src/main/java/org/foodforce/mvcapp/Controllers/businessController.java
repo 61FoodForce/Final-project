@@ -1,10 +1,13 @@
 package org.foodforce.mvcapp.Controllers;
 
 import org.foodforce.mvcapp.POJO.Business;
+import org.foodforce.mvcapp.POJO.Donation;
 import org.foodforce.mvcapp.Storage.BusinessStorage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 
 @Controller
 public class businessController {
@@ -14,12 +17,26 @@ public class businessController {
         this.businessStorage = businessStorage;
     }
 
+    @GetMapping("/")
+    public String displayBusinesses(Model model) {
+        Iterable<Business> businesses = businessStorage.retrieveAllBusiness();
+        for (Business business: businesses) {
+            int items = 0;
+            for (Donation donation:business.getDonations())
+            {
+                items += donation.getFoodQuantity();
+            }
+            business.setTotalItemsDonated(items);
+        }
+
+        model.addAttribute("businesses", businesses );
+        return "businesses.html";
+    }
     @GetMapping("{id}")
-    public String displayBusinesses(@PathVariable long id, Model model) {
-        model.addAttribute("businesses", businessStorage.retrieveBusinessById(id));
+    public String displayBusiness(@PathVariable long id, Model model) {
+        model.addAttribute("business", businessStorage.retrieveBusinessById(id).get());
         return "business.html";
     }
-
     @PostMapping("{id}")
     public String addBusiness(@PathVariable long id, @RequestParam String name, @RequestParam String streetAddress, @RequestParam String city,
                              @RequestParam String state, @RequestParam String phoneNumber, @RequestParam Boolean isCharity) {
