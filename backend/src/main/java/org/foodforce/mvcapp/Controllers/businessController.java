@@ -30,7 +30,7 @@ public class businessController {
         }
 
         model.addAttribute("businesses", businesses );
-        return "businesses.html";
+        return "businessessSample.html";
     }
     @GetMapping("{id}")
     public String displayBusiness(@PathVariable long id, Model model) {
