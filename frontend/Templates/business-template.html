@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="layout.css">
+
+</head>
+<main>
+    <body>
+        <div class="header">
+            <h1>Avaliable Businesses</h1>
+        </div>
+        <!-- <img src=""> -->
+
+    <h2>
+    <li th:text="${business.name}"></il>
+    <li th:text="${business.streetAddress}"></li>
+    <li th:text="${business.city}"></li>
+    <li th:text="${business.state}"></li>
+    <li th:text="${business.phoneNumber}"></li>
+</h2>
+<ul th:each="donation:${business.donations}"><li></li>
+<li><a th:href="'/donations/'+${donation.id}">
+<span th:text="${donation.name}"></span></a>></li>
+</ul>
+    
+</main>
+
+
+    
+</body>
+<footer>
+    <div>
+    <c>Copyright @2021-WCCI</c>
+    </div>
+  </footer>
+
+</html>
