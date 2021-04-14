@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Available Donations</title>
+</head>
+
+<body>
+<a th:each="donation : ${donations}" th:href="@{'/donations'}" >
+  <p th:text="${donation.business.name}"></p>
+  <p th:text="${donation.foodQuantity} + ' ' + ${donation.foodUnit} + ' of ' + ${donation.name}"></p>
+  <br><br>
+</a>
+</body>
+</html>
