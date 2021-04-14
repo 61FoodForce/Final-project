@@ -20,6 +20,7 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+      //________________________________________________
         Business business1 = new Business( "Mid Ohio food bank", "755 South High Street", "Columbus", "Ohio", "614-555-6700", true);
 //        business1.setStreetAddress("755 South High Street");
 //        business1.setCity("Columbus");
@@ -28,12 +29,24 @@ public class Populator implements CommandLineRunner {
 //        business1.setCharity(true);
         this.businessStorage.saveBusiness(business1);
 
+        Donation donation2 = new Donation("Chips", business1, 11, Donation.Unit.BAG);
+        //donation1.setFoodUnit(Donation.Unit.CAN);
+//        donation1.setFoodQuantity(15);
+        this.donationStorage.saveDonation(donation2);
+
         Donation donation1 = new Donation("Beans", business1, 15, Donation.Unit.CAN);
         //donation1.setFoodUnit(Donation.Unit.CAN);
 //        donation1.setFoodQuantity(15);
         this.donationStorage.saveDonation(donation1);
 
 
+        Business business2 = new Business( "Ray Ray Hog Pit", "680 North High Street", "Columbus", "Ohio", "614-399-6255", true);
+        this.businessStorage.saveBusiness(business2);
+
+        Donation donation3 = new Donation("BBQ Sauce", business2, 15, Donation.Unit.CAN);
+        //donation1.setFoodUnit(Donation.Unit.CAN);
+//        donation1.setFoodQuantity(15);
+        this.donationStorage.saveDonation(donation3);
 
 
 

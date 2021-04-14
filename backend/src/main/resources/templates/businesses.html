@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Businesses View</title>
+</head>
+<body>
+<h1>Businesses View</h1>
+<br>
+<ul th:each="business:${businesses}">
+<li th:text="${business.name} + ' Donated: '+ ${business.totalItemsDonated} + ' items total'"></li>
+
+</ul>
+</body>
+</html>
