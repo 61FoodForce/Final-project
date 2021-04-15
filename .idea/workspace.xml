@@ -7,12 +7,7 @@
     <list default="true" id="253360a5-1204-45a5-bcb0-f48a180ab1b2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/Controllers/donationsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/Controllers/donationsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/POJO/Business.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/POJO/Business.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/Repo/BusinessRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/Repo/BusinessRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/Storage/BusinessStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/Storage/BusinessStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/Storage/DonationStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/Storage/DonationStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/templates/donation-display-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/templates/donation-display-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/templates/donationform.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/templates/donationform.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/templates/donationform.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/donationform.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +61,7 @@
       <recent name="C:\Users\wecan\IdeaProjects\Final-project\backend\src\main\resources\static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wecan\IdeaProjects\Final-project\backend\src\main\resources\static" />
       <recent name="C:\Users\wecan\IdeaProjects\Final-project\backend\src\main\resources\templates" />
     </key>
   </component>
@@ -87,7 +83,7 @@
     <configuration name="donationform.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Final-project/frontend/Static/donationform.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="donationform.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Final-project/mvcapp.main/templates/donationform.html" useBuiltInWebServerPort="true">
+    <configuration name="donationform.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Final-project/mvcapp.main/static/donationform.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="MvcappApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -127,5 +123,16 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/Controllers/donationsController.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

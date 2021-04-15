@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
+@RequestMapping("/donations")
 public class donationsController {
     private DonationStorage donationStorage;
     private BusinessStorage businessStorage;
@@ -17,7 +18,7 @@ public class donationsController {
     }
 
     // Displays all donations to donation display page.
-    @RequestMapping("/donations")
+    @RequestMapping("")
     public String displayAllDonations(Model model) {
         model.addAttribute("donations", donationStorage.retrieveAllDonations());
         return "donation-display-page";
@@ -35,7 +36,7 @@ public class donationsController {
 //        Donation donationToAdd = new Donation(name, business, foodQuantity, Donation.Unit.CAN);
 //        donationStorage.saveDonation(donationToAdd);
 //        return "redirect:";
-    @PostMapping("/donations/submitDonation")
+    @PostMapping("/submitDonation")
     public String addDonation(String _name, String _business, int _foodQuantity) {
         Donation donationToAdd = new Donation(_name, businessStorage.retrieveBusinessByName(_business), _foodQuantity, Donation.Unit.CAN);
         donationStorage.saveDonation(donationToAdd);
