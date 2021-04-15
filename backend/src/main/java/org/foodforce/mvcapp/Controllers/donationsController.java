@@ -2,6 +2,7 @@ package org.foodforce.mvcapp.Controllers;
 
 import org.foodforce.mvcapp.POJO.Donation;
 import org.foodforce.mvcapp.POJO.Business;
+import org.foodforce.mvcapp.Storage.BusinessStorage;
 import org.foodforce.mvcapp.Storage.DonationStorage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class donationsController {
     private DonationStorage donationStorage;
+    private BusinessStorage businessStorage;
     public donationsController(DonationStorage donationStorage) {
         this.donationStorage = donationStorage;
     }
@@ -33,17 +35,18 @@ public class donationsController {
 //        Donation donationToAdd = new Donation(name, business, foodQuantity, Donation.Unit.CAN);
 //        donationStorage.saveDonation(donationToAdd);
 //        return "redirect:";
-    @PostMapping("/submitDonation")
-    public String addDonation(String _name, Business _business, int _foodQuantity) {
-        Donation donationToAdd = new Donation(_name, _business, _foodQuantity, Donation.Unit.CAN);
+    @PostMapping("/donations/submitDonation")
+    public String addDonation(String _name, String _business, int _foodQuantity) {
+        Donation donationToAdd = new Donation(_name, businessStorage.retrieveBusinessByName(_business), _foodQuantity, Donation.Unit.CAN);
         donationStorage.saveDonation(donationToAdd);
-        return "redirect: /donations/";
+        return "redirect:/donations";
     }
 
     @DeleteMapping("{id}")
     public String deleteDonation(@PathVariable long id) {
+       // donationStorage.retrieveDonationById().get
         donationStorage.deleteDonationById(id);
-        return "redirect:";
+        return "redirect:/donations";
     }
 
 

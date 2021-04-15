@@ -6,10 +6,15 @@
 </head>
 
 <body>
+<h2>Food banks and Soup kitchens: Please check the donations you would like and hit Submit</h2>
 <a th:each="donation : ${donations}" th:href="@{'/donations'}" >
   <p th:text="${donation.business.name}"></p>
   <p th:text="${donation.foodQuantity} + ' ' + ${donation.foodUnit} + ' of ' + ${donation.name}"></p>
+  <form class="acceptButton" action="/donations/acceptDonation" method="get">
+    <input type="submit" text="ACCEPT">
+  </form>
   <br><br>
 </a>
+
 </body>
 </html>

@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="253360a5-1204-45a5-bcb0-f48a180ab1b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/templates/donation-display-page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/templates/donationform.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/Controllers/donationsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/Controllers/donationsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/Static/donationform.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Static/donationform.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/POJO/Business.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/POJO/Business.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/Repo/BusinessRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/Repo/BusinessRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/Storage/BusinessStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/Storage/BusinessStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/Storage/DonationStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/Storage/DonationStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/templates/donation-display-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/templates/donation-display-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/templates/donationform.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/templates/donationform.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

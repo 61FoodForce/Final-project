@@ -16,10 +16,15 @@ public class DonationStorage {
 
     public Iterable<Donation> retrieveAllDonations() {return donationRepo.findAll();}
 
-    public void deleteDonationById(Long id) {donationRepo.deleteById(id);}
+    public void deleteDonationById(Long id) {
+        donationRepo.deleteById(id);
+
+    }
 
     public Optional<Donation> retrieveDonationById(Long id) {return donationRepo.findById(id);}
 
 
     }
+
+
 
