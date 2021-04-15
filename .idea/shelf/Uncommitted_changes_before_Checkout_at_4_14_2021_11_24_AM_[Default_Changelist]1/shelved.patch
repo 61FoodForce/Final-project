@@ -1,0 +1,233 @@
+Index: backend/src/main/java/org/foodforce/mvcapp/Controllers/donationsController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//package org.foodforce.mvcapp.Controllers;\r\n//\r\n//import org.foodforce.mvcapp.POJO.Donation;\r\n//import org.foodforce.mvcapp.POJO.Business;\r\n//import org.foodforce.mvcapp.Storage.DonationStorage;\r\n//import org.springframework.stereotype.Controller;\r\n//import org.springframework.ui.Model;\r\n//import org.springframework.web.bind.annotation.*;\r\n//\r\n//@Controller\r\n//public class donationsController {\r\n//    private DonationStorage donationStorage;\r\n//\r\n//    public donationsController(DonationStorage donationStorage) {\r\n//        this.donationStorage = donationStorage;\r\n//    }\r\n//\r\n//    @GetMapping(\"{id}\")\r\n//    public String displayDonations(@PathVariable long id, Model model) {\r\n//        model.addAttribute(\"donations\", donationStorage.retrieveDonationById(id));\r\n//        return \"\";\r\n//    }\r\n//\r\n//    @PostMapping(\"/donationform\")\r\n//    public String addDonation(@PathVariable long id, @RequestParam String name, @RequestParam Business business, @RequestParam int foodQuantity, @RequestParam int foodUnit) {\r\n//        Donation donationToAdd = new Donation(name, business, foodQuantity, Donation.Unit.CAN);\r\n//        donationStorage.saveDonation(donationToAdd);\r\n//        return \"redirect:\";\r\n//    }\r\n//\r\n//    @DeleteMapping(\"{id}\")\r\n//    public String deleteDonation(@PathVariable long id) {\r\n//        donationStorage.deleteDonationById(id);\r\n//        return \"redirect:\";\r\n//    }\r\n//\r\n//\r\n//}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/src/main/java/org/foodforce/mvcapp/Controllers/donationsController.java b/backend/src/main/java/org/foodforce/mvcapp/Controllers/donationsController.java
+--- a/backend/src/main/java/org/foodforce/mvcapp/Controllers/donationsController.java	
++++ b/backend/src/main/java/org/foodforce/mvcapp/Controllers/donationsController.java	
+@@ -1,38 +1,38 @@
+-//package org.foodforce.mvcapp.Controllers;
+-//
+-//import org.foodforce.mvcapp.POJO.Donation;
+-//import org.foodforce.mvcapp.POJO.Business;
+-//import org.foodforce.mvcapp.Storage.DonationStorage;
+-//import org.springframework.stereotype.Controller;
+-//import org.springframework.ui.Model;
+-//import org.springframework.web.bind.annotation.*;
+-//
+-//@Controller
+-//public class donationsController {
+-//    private DonationStorage donationStorage;
+-//
+-//    public donationsController(DonationStorage donationStorage) {
+-//        this.donationStorage = donationStorage;
+-//    }
+-//
+-//    @GetMapping("{id}")
+-//    public String displayDonations(@PathVariable long id, Model model) {
+-//        model.addAttribute("donations", donationStorage.retrieveDonationById(id));
+-//        return "";
+-//    }
+-//
+-//    @PostMapping("/donationform")
+-//    public String addDonation(@PathVariable long id, @RequestParam String name, @RequestParam Business business, @RequestParam int foodQuantity, @RequestParam int foodUnit) {
+-//        Donation donationToAdd = new Donation(name, business, foodQuantity, Donation.Unit.CAN);
+-//        donationStorage.saveDonation(donationToAdd);
+-//        return "redirect:";
+-//    }
+-//
+-//    @DeleteMapping("{id}")
+-//    public String deleteDonation(@PathVariable long id) {
+-//        donationStorage.deleteDonationById(id);
+-//        return "redirect:";
+-//    }
+-//
+-//
+-//}
+\ No newline at end of file
++package org.foodforce.mvcapp.Controllers;
++
++import org.foodforce.mvcapp.POJO.Donation;
++import org.foodforce.mvcapp.POJO.Business;
++import org.foodforce.mvcapp.Storage.DonationStorage;
++import org.springframework.stereotype.Controller;
++import org.springframework.ui.Model;
++import org.springframework.web.bind.annotation.*;
++
++@Controller
++public class donationsController {
++    private DonationStorage donationStorage;
++
++    public donationsController(DonationStorage donationStorage) {
++        this.donationStorage = donationStorage;
++    }
++
++    @GetMapping("{id}")
++    public String displayDonations(@PathVariable long id, Model model) {
++        model.addAttribute("donations", donationStorage.retrieveDonationById(id));
++        return "";
++    }
++
++    @PostMapping("/donationform")
++    public String addDonation(@PathVariable long id, @RequestParam String name, @RequestParam Business business, @RequestParam int foodQuantity, @RequestParam int foodUnit) {
++        Donation donationToAdd = new Donation(name, business, foodQuantity, Donation.Unit.CAN);
++        donationStorage.saveDonation(donationToAdd);
++        return "redirect:";
++    }
++
++    @DeleteMapping("/{id}")
++    public String deleteDonation(@PathVariable long id) {
++        donationStorage.deleteDonationById(id);
++        return "redirect:";
++    }
++
++
++}
+\ No newline at end of file
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$/backend\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$/backend\" />\r\n          </set>\r\n        </option>\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+--- a/.idea/gradle.xml	
++++ b/.idea/gradle.xml	
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="GradleMigrationSettings" migrationVersion="1" />
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"253360a5-1204-45a5-bcb0-f48a180ab1b2\" name=\"Default Changelist\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ExternalProjectsData\">\r\n    <projectState path=\"$PROJECT_DIR$/backend\">\r\n      <ProjectState />\r\n    </projectState>\r\n  </component>\r\n  <component name=\"ExternalProjectsManager\">\r\n    <system id=\"GRADLE\">\r\n      <state>\r\n        <projects_view>\r\n          <tree_state>\r\n            <expand />\r\n            <select />\r\n          </tree_state>\r\n        </projects_view>\r\n      </state>\r\n    </system>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1r7V1RWEFrRbTbRbRqcpTWTh7HM\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"253360a5-1204-45a5-bcb0-f48a180ab1b2\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1618326901421</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1618326901421</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -5,7 +5,12 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="253360a5-1204-45a5-bcb0-f48a180ab1b2" name="Default Changelist" comment="">
++      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/Controllers/donationsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/foodforce/mvcapp/Controllers/donationsController.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -22,7 +27,12 @@
+       <state>
+         <projects_view>
+           <tree_state>
+-            <expand />
++            <expand>
++              <path>
++                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
++                <item name="mvcapp" type="f1a62948:ProjectNode" />
++              </path>
++            </expand>
+             <select />
+           </tree_state>
+         </projects_view>
+@@ -30,6 +40,11 @@
+     </system>
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="dev" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="ProjectId" id="1r7V1RWEFrRbTbRbRqcpTWTh7HM" />
+@@ -38,8 +53,22 @@
+     <option name="showLibraryContents" value="true" />
+   </component>
+   <component name="PropertiesComponent">
++    <property name="RequestMappingsPanelOrder0" value="0" />
++    <property name="RequestMappingsPanelOrder1" value="1" />
++    <property name="RequestMappingsPanelWidth0" value="75" />
++    <property name="RequestMappingsPanelWidth1" value="75" />
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
++    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
++  </component>
++  <component name="RunManager">
++    <configuration name="MvcappApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
++      <module name="mvcapp.main" />
++      <option name="SPRING_BOOT_MAIN_CLASS" value="org.foodforce.mvcapp.MvcappApplication" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+@@ -52,4 +81,18 @@
+     </task>
+     <servers />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="oldMeFiltersMigrated" value="true" />
++  </component>
++  <component name="XDebuggerManager">
++    <breakpoint-manager>
++      <breakpoints>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/backend/src/main/java/Controllers/businessController.java</url>
++          <line>37</line>
++          <option name="timeStamp" value="1" />
++        </line-breakpoint>
++      </breakpoints>
++    </breakpoint-manager>
++  </component>
+ </project>
+\ No newline at end of file
+Index: .idea/compiler.xml
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/compiler.xml	
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CompilerConfiguration">
++    <bytecodeTargetLevel target="11" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"corretto-11\" project-jdk-type=\"JavaSDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -1,5 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+-  <component name="ProjectRootManager" version="2" project-jdk-name="corretto-11" project-jdk-type="JavaSDK" />
++  <component name="FrameworkDetectionExcludesConfiguration">
++    <file type="web" url="file://$PROJECT_DIR$/backend" />
++  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="corretto-11" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file
