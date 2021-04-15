@@ -105,6 +105,6 @@ public class Business {
     }
 
     public void increaseItemsDonated(){
-        this.totalItemsDonated = this.totalItemsDonated++;
+        this.totalItemsDonated++;
     }
 }

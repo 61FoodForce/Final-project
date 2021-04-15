@@ -1,26 +1,30 @@
 package org.foodforce.mvcapp.Controllers;
 
-import org.foodforce.mvcapp.POJO.Donation;
 import org.foodforce.mvcapp.POJO.Business;
+import org.foodforce.mvcapp.POJO.Donation;
 import org.foodforce.mvcapp.Storage.BusinessStorage;
 import org.foodforce.mvcapp.Storage.DonationStorage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/donations")
 public class donationsController {
     private DonationStorage donationStorage;
     private BusinessStorage businessStorage;
-    public donationsController(DonationStorage donationStorage) {
+    public donationsController(DonationStorage donationStorage, BusinessStorage businessStorage) {
         this.donationStorage = donationStorage;
+        this.businessStorage = businessStorage;
     }
 
     // Displays all donations to donation display page.
     @RequestMapping("")
     public String displayAllDonations(Model model) {
-        model.addAttribute("donations", donationStorage.retrieveAllDonations());
+       // model.addAttribute("donations", donationStorage.retrieveAllDonations());
+        model.addAttribute("businesses", businessStorage.retrieveAllBusiness());
         return "donation-display-page";
     }
 
@@ -49,6 +53,18 @@ public class donationsController {
         donationStorage.deleteDonationById(id);
         return "redirect:/donations";
     }
+
+    @GetMapping("/acceptDonation")
+    public String increaseDonationCount(@RequestParam String _business, @RequestParam(name="id") List<Integer> donations) {
+        Business business = businessStorage.retrieveBusinessByName(_business);
+        for (int i:donations) {
+            business.increaseItemsDonated();
+        }
+        businessStorage.saveBusiness(business);
+        return "redirect:/donations";
+    }
+
+        //
 
 
 }

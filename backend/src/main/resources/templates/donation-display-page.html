@@ -7,14 +7,23 @@
 
 <body>
 <h2>Food banks and Soup kitchens: Please check the donations you would like and hit Submit</h2>
-<a th:each="donation : ${donations}" th:href="@{'/donations'}" >
-  <p th:text="${donation.business.name}"></p>
-  <p th:text="${donation.foodQuantity} + ' ' + ${donation.foodUnit} + ' of ' + ${donation.name}"></p>
+<ul th:each="business : ${businesses}" th:href="@{'/donations'}" >
   <form class="acceptButton" action="/donations/acceptDonation" method="get">
-    <input type="submit" text="ACCEPT">
-  </form>
-  <br><br>
-</a>
+    <l1><h1 th:text="${business.name}"></h1></l1>
+    <hr>
+    <ul th:each="donation: ${business.getDonations()}">
 
+    <li>
+      <input type="checkbox"  id="donationItem"  name="id" th:value="${donation.getId()}">
+      <label th:for="${donation.getId()}" th:text="${donation.foodQuantity} + ' ' + ${donation.foodUnit} + ' of ' + ${donation.name}"> </label>
+      <br>
+    </li>
+    </ul>
+  <br><br>
+    <input type="hidden" name="_business" th:value="${business.name}">
+    <input type="submit" text="ACCEPT">
+
+    </form>
+  </ul>
 </body>
 </html>
