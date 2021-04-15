@@ -21,4 +21,9 @@ public class BusinessStorage {
     public Optional<Business> retrieveDonationById(Long id) {return businessRepo.findById(id);}
 
     public Optional<Business> retrieveBusinessById(long id) {return businessRepo.findById(id);}
+
+    public Business retrieveBusinessByName(String name){
+        return businessRepo.findByName(name);
+
+    }
 }

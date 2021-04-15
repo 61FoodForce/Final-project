@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Available Donations</title>
+</head>
+
+<body>
+<h2>Food banks and Soup kitchens: Please check the donations you would like and hit Submit</h2>
+<ul th:each="business : ${businesses}" th:href="@{'/donations'}" >
+  <form class="acceptButton" action="/donations/acceptDonation" method="get">
+    <l1><h1 th:text="${business.name}"></h1></l1>
+    <hr>
+    <ul th:each="donation: ${business.getDonations()}">
+
+    <li>
+      <input type="checkbox"  id="donationItem"  name="id" th:value="${donation.getId()}">
+      <label th:for="${donation.getId()}" th:text="${donation.foodQuantity} + ' ' + ${donation.foodUnit} + ' of ' + ${donation.name}"> </label>
+      <br>
+    </li>
+    </ul>
+  <br><br>
+    <input type="hidden" name="_business" th:value="${business.name}">
+    <input type="submit" text="ACCEPT">
+
+    </form>
+  </ul>
+</body>
+</html>

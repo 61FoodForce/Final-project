@@ -103,4 +103,8 @@ public class Business {
     public void setTotalItemsDonated(int totalItemsDonated) {
         this.totalItemsDonated = totalItemsDonated;
     }
+
+    public void increaseItemsDonated(){
+        this.totalItemsDonated++;
+    }
 }
