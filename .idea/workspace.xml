@@ -9,6 +9,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/Static/factsAboutFoodWaste.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Static/factsAboutFoodWaste.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/Static/foodReduction.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Static/foodReduction.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +69,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
     <configuration name="MvcappApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -87,7 +89,7 @@
       <option name="presentableId" value="Default" />
       <updated>1618326901421</updated>
       <workItem from="1618450100285" duration="601000" />
-      <workItem from="1618497992350" duration="5398000" />
+      <workItem from="1618497992350" duration="5826000" />
     </task>
     <servers />
   </component>
