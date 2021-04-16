@@ -254,23 +254,35 @@
       justify-content: center;
   } */
   
-   /* ._container1{
-      height: 1%;
-      /* border: 1px solid blueviolet; */
+   ._container1{
+      height: 50%;
+       /* border: 1px solid blueviolet; */
   }  
-  /* ._container1 h1 {
-      display: flex;
-      justify-content: center;
-  }   */ */
+   ._container1 h1 {
+    display: grid;
+    grid-column:1/2 ;
+    grid-row: 1/2;
+  }  
   ._container {
-    height: 100%;
     display: grid;
     grid-column: 1/2;
     grid-row: 1/2;
+    width: 90%;
   }
   ._container1{
     height: 100%;
     display: grid;
     grid-column:1/2 ;
     grid-row: 1/2;
-  } */
+  } 
+  .food_waste_prevention{
+    display: grid;
+    grid-column:1/2 ;
+    grid-row: 1/2;
+  }
+  ._main_container{
+    display: grid;
+    grid-column:1/2 ;
+    grid-row: 1/2;
+  }
+ 
