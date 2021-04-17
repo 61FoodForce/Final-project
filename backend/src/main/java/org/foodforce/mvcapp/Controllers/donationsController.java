@@ -47,7 +47,7 @@ public class donationsController {
         return "redirect:/donations";
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/acceptDonation")
     public String deleteDonation(@PathVariable long id) {
        // donationStorage.retrieveDonationById().get
         donationStorage.deleteDonationById(id);
@@ -55,13 +55,17 @@ public class donationsController {
     }
 
     @GetMapping("/acceptDonation")
-    public String increaseDonationCount(@RequestParam String _business, @RequestParam(name="id") List<Integer> donations) {
+    public String increaseDonationCount(@RequestParam String _charity, @RequestParam String _business, @RequestParam(name="id") List<Integer> donations) {
         Business business = businessStorage.retrieveBusinessByName(_business);
         for (int i:donations) {
             business.increaseItemsDonated();
         }
+       // for (Donation donation:business.getDonations()){
+       //     donationStorage.deleteDonationById(donation.getId());
+       // }
         businessStorage.saveBusiness(business);
         return "redirect:/donations";
+
     }
 
 

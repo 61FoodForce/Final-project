@@ -14,12 +14,13 @@
     <ul th:each="donation: ${business.getDonations()}">
 
     <li>
-      <input type="checkbox"  id="donationItem"  name="id" th:value="${donation.getId()}">
+      <input type="checkbox" class="donationItem"  name="id" th:value="${donation.getId()}">
       <label th:for="${donation.getId()}" th:text="${donation.foodQuantity} + ' ' + ${donation.foodUnit} + ' of ' + ${donation.name}"> </label>
       <br>
     </li>
     </ul>
   <br><br>
+    <input type="text" name="_charity" placeholder="CHARITY ACCEPTING">
     <input type="hidden" name="_business" th:value="${business.name}">
     <input type="submit" text="ACCEPT">
 

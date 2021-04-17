@@ -21,7 +21,7 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Business business1 = new Business( "krober", "755 South High Street", "Columbus", "Ohio", "614-555-6700", true);
+        Business business1 = new Business( "krober", "755 South High Street", "Columbus", "Ohio", "614-555-6700", false);
         this.businessStorage.saveBusiness(business1);
 
         Donation donation1 = new Donation("Chips", business1, 11, Donation.Unit.BAG);
@@ -30,7 +30,7 @@ public class Populator implements CommandLineRunner {
         this.donationStorage.saveDonation(donation2);
 
 
-        Business business2 = new Business( "Ray Ray Hog Pit", "680 North High Street", "Columbus", "Ohio", "614-400-6255", true);
+        Business business2 = new Business( "Ray Ray Hog Pit", "680 North High Street", "Columbus", "Ohio", "614-400-6255", false);
         this.businessStorage.saveBusiness(business2);
 
         Donation donation3 = new Donation("BBQ Sauce", business2, 15, Donation.Unit.CAN);
@@ -40,7 +40,7 @@ public class Populator implements CommandLineRunner {
 
 
 
-        Business business3 = new Business( "Aldim", "123 left street", "Columbus", "Ohio", "614-555-6700", true);
+        Business business3 = new Business( "Aldim", "123 left street", "Columbus", "Ohio", "614-555-6700", false);
         this.businessStorage.saveBusiness(business3);
 
         Donation donation5 = new Donation("rice", business3, 11, Donation.Unit.BAG);
@@ -50,7 +50,7 @@ public class Populator implements CommandLineRunner {
 
 
 
-        Business business4 = new Business( "Samy Club", "150 N Sycamore St", "Columbus", "Ohio", "614-700-6780", true);
+        Business business4 = new Business( "Samy Club", "150 N Sycamore St", "Columbus", "Ohio", "614-700-6780", false);
         this.businessStorage.saveBusiness(business4);
 
         Donation donation7 = new Donation("Canned stew", business4, 40, Donation.Unit.CAN);
@@ -59,7 +59,7 @@ public class Populator implements CommandLineRunner {
         this.donationStorage.saveDonation(donation8);
 
 
-        Business business5 = new Business( "Wholes Food", "3670 W Dublin Granville R", "Columbus", "Ohio", "614-700-67700", true);
+        Business business5 = new Business( "Wholes Food", "3670 W Dublin Granville R", "Columbus", "Ohio", "614-700-67700", false);
         this.businessStorage.saveBusiness(business5);
 
         Donation donation9 = new Donation("Peanut butter", business5, 30, Donation.Unit.CAN);
@@ -69,7 +69,7 @@ public class Populator implements CommandLineRunner {
 
 
 
-        Business business6 = new Business( "Saraga International Grocery", "1265 Morse Rd", "Columbus", "Ohio", "614-700-8000", true);
+        Business business6 = new Business( "Saraga International Grocery", "1265 Morse Rd", "Columbus", "Ohio", "614-700-8000", false);
         this.businessStorage.saveBusiness(business6);
 
         Donation donation11 = new Donation("Canned soup", business6, 20, Donation.Unit.CAN);
@@ -79,7 +79,7 @@ public class Populator implements CommandLineRunner {
 
 
 
-        Business business7 = new Business( "Saraga International Grocery", "1265 Morse Rd", "Columbus", "Ohio", "614-600-6500", true);
+        Business business7 = new Business( "Saraga International Grocery", "1265 Morse Rd", "Columbus", "Ohio", "614-600-6500", false);
         this.businessStorage.saveBusiness(business7);
 
         Donation donation13= new Donation("Applesauce", business7, 33, Donation.Unit.CAN);
@@ -90,7 +90,7 @@ public class Populator implements CommandLineRunner {
 
 
 
-        Business business8 = new Business( "Trader Joe", "888 Townsfair Way", "Columbus", "Ohio", "614-700-1230", true);
+        Business business8 = new Business( "Trader Joe", "888 Townsfair Way", "Columbus", "Ohio", "614-700-1230", false);
         this.businessStorage.saveBusiness(business8);
 
         Donation donation15= new Donation("Canned Chicken", business8, 20, Donation.Unit.CAN);
@@ -100,7 +100,7 @@ public class Populator implements CommandLineRunner {
 
 
 
-        Business business9 = new Business( "The Refectory Restaurant", "2891 E Main St", "Columbus", "Ohio", "614-700-1350", true);
+        Business business9 = new Business( "The Refectory Restaurant", "2891 E Main St", "Columbus", "Ohio", "614-700-1350", false);
         this.businessStorage.saveBusiness(business9);
 
         Donation donation17= new Donation("Instant Mashed Potatoes", business9, 27, Donation.Unit.BAG);
@@ -110,7 +110,7 @@ public class Populator implements CommandLineRunner {
 
 
 
-        Business business10 = new Business( "The Table", "21 E 5th Ave #101", "Columbus", "Ohio", "614-700-1355", true);
+        Business business10 = new Business( "The Table", "21 E 5th Ave #101", "Columbus", "Ohio", "614-700-1355", false);
         this.businessStorage.saveBusiness(business10);
 
         Donation donation19= new Donation("honey", business10, 15, Donation.Unit.CAN);
