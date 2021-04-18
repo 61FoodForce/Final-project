@@ -104,7 +104,9 @@ public class donationsController {
         return "search-display-page";}
 
     @RequestMapping("/donationForm")
-    public String donationForm(){
+    public String donationForm(Model model){
+        Iterable<Business> businesses = businessStorage.retrieveAllBusiness();
+        model.addAttribute("businesses", businesses);
         return "donationForm";
     }
 }
