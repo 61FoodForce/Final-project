@@ -6,20 +6,21 @@
 </head>
 <body>
 
-<form class="acceptButton" action="/donations/acceptDonation" method="get">
-    <li>
-      <h1 th:text="${donation.business.name}"></h1>
-      <input type="checkbox" class="donationItem"  name="id" th:value="${donation.getId()}">
-      <label th:for="${donation.getId()}" th:text="${donation.foodQuantity} + ' ' + ${donation.foodUnit} + ' of ' + ${donation.name}"> </label>
-      <br>
-    </li>
-  </ul>
-  <br><br>
-  <input type="text" name="_charity" placeholder="CHARITY ACCEPTING">
-  <input type="hidden" name="_business" th:value="${donation.business.name}">
-  <input type="submit" text="ACCEPT">
+  <form class="acceptButton" action="/donations/acceptDonation" method="get">
+    <ul th:each="donation: ${searchedDonations}">
+      <li>
+        <h1 th:text="${donation.getValue().getBusiness().name}"></h1>
+        <input type="checkbox" class="donationItem"  name="id" th:value="${donation.getValue().getId()}">
+        <label th:for="${donation.getValue().getId()}" th:text="${donation.getValue().getFoodQuantity()} + ' ' + ${donation.getValue().getFoodUnit()} + ' of ' + ${donation.getValue().getName()}"> </label>
+        <br>
+      </li>
 
-</form>
-</ul>
+    <br><br>
+    <input type="text" name="_charity" placeholder="CHARITY ACCEPTING">
+    <input type="hidden" name="_business" th:value="${donation.getValue().getBusiness().name}">
+    <input type="submit" text="ACCEPT">
+    </ul>
+  </form>
+
 </body>
 </html>

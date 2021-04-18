@@ -8,7 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/donations")
@@ -67,12 +70,23 @@ public class donationsController {
         return "redirect:/donations";
 
     }
+//    @RequestMapping("/searchDonations")
+//    public String showDonationByName(@RequestParam String _search, Model model) {
+//        model.addAttribute("donation", donationStorage.retrieveDonationByName(_search));
+//        return "search-display-page";}
+
+
     @RequestMapping("/searchDonations")
     public String showDonationByName(@RequestParam String _search, Model model) {
-        model.addAttribute("donation", donationStorage.retrieveDonationByName(_search));
+        Iterable<Donation> donations = donationStorage.retrieveAllDonations();
+        Map<String, Donation> searchedDonations = new HashMap<>();
+        for (Donation donation: donations){
+            if (donation.getName().equals(_search)){
+                searchedDonations.put(donation.getName(), donation);
+            }else{}
+
+        }
+        model.addAttribute("searchedDonations", searchedDonations);
         return "search-display-page";}
-
-
-
 
 }
