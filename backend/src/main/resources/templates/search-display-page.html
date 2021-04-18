@@ -2,14 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Found Results</title>
 </head>
 <body>
 
   <form class="acceptButton" action="/donations/acceptDonation" method="get">
+    <h1 th:text="${foundDonations.size()} ? 0 + ' Results Found': '  Results'"></h1>
     <ul th:each="donation:${foundDonations}">
       <li>
-        <h1 th:text="${donation.getBusiness().name}"></h1>
+
         <input type="checkbox" class="donationItem"  name="id" th:value="${donation.getId()}">
         <label th:for="${donation.getId()}" th:text="${donation.getFoodQuantity()} + ' ' + ${donation.getFoodUnit()} + ' of ' + ${donation.getName()}"> </label>
         <br>

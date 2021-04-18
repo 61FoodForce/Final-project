@@ -96,11 +96,15 @@ public class donationsController {
         ArrayList<Donation> foundDonations = new ArrayList<Donation>();
         //Map<String, Donation> searchedDonations = new HashMap<>();
         for (Donation donation: donations){
-            if (donation.getName().toLowerCase(Locale.ROOT).equals(_search.toLowerCase(Locale.ROOT))){
+            if (donation.getName().toLowerCase(Locale.ROOT).contains(_search.toLowerCase(Locale.ROOT))){
                 foundDonations.add(donation);
             }
         }
         model.addAttribute("foundDonations", foundDonations);
         return "search-display-page";}
 
+    @RequestMapping("/donationForm")
+    public String donationForm(){
+        return "donationForm";
+    }
 }
