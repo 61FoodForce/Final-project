@@ -25,7 +25,15 @@
     </li>
     </ul>
   <br><br>
-    <input type="text" name="_charity" placeholder="CHARITY ACCEPTING">
+
+    <label for="charity">Choose your charity:</label>
+    <select name="charity" id="charity" >
+      <option th:each="nonProfit : ${nonProfits}" th:value="${nonProfit.getId()}" th:text="${nonProfit.getName()}"></option>
+    </select>
+
+
+
+<!--    <input type="text" name="_charity" placeholder="CHARITY ACCEPTING">-->
     <input type="hidden" name="_business" th:value="${business.name}">
     <input type="submit" text="ACCEPT">
 
