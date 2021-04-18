@@ -40,6 +40,7 @@ public class Populator implements CommandLineRunner {
 
 
 
+
         Business business3 = new Business( "Aldim", "123 left street", "Columbus", "Ohio", "614-555-6700", false);
         this.businessStorage.saveBusiness(business3);
 
@@ -126,6 +127,8 @@ public class Populator implements CommandLineRunner {
         this.donationStorage.saveDonation(donation19);
         Donation donation20= new Donation("dried fruits", business10, 22, Donation.Unit.BAG);
         this.donationStorage.saveDonation(donation20);
+        Donation donation21= new Donation("Chips", business10, 1, Donation.Unit.BAG);
+        this.donationStorage.saveDonation(donation21);
 
 
     }

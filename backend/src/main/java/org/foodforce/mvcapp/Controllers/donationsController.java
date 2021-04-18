@@ -96,7 +96,7 @@ public class donationsController {
         ArrayList<Donation> foundDonations = new ArrayList<Donation>();
         //Map<String, Donation> searchedDonations = new HashMap<>();
         for (Donation donation: donations){
-            if (donation.getName().toLowerCase(Locale.ROOT).contains(_search.toLowerCase(Locale.ROOT))){
+            if (donation.getName().toLowerCase(Locale.ROOT).contains(_search.toLowerCase(Locale.ROOT)) && _search.length()>0){
                 foundDonations.add(donation);
             }
         }
