@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<form class="acceptButton" action="/donations/acceptDonation" method="get">
+    <li>
+      <h1 th:text="${donation.business.name}"></h1>
+      <input type="checkbox" class="donationItem"  name="id" th:value="${donation.getId()}">
+      <label th:for="${donation.getId()}" th:text="${donation.foodQuantity} + ' ' + ${donation.foodUnit} + ' of ' + ${donation.name}"> </label>
+      <br>
+    </li>
+  </ul>
+  <br><br>
+  <input type="text" name="_charity" placeholder="CHARITY ACCEPTING">
+  <input type="hidden" name="_business" th:value="${donation.business.name}">
+  <input type="submit" text="ACCEPT">
+
+</form>
+</ul>
+</body>
+</html>

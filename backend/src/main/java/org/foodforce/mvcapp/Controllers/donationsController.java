@@ -55,18 +55,22 @@ public class donationsController {
     }
 
     @GetMapping("/acceptDonation")
-    public String increaseDonationCount(@RequestParam String _charity, @RequestParam String _business, @RequestParam(name="id") List<Integer> donations) {
+    public String increaseDonationCount(@RequestParam String _charity, @RequestParam String _business, @RequestParam(name="id") List<Integer> donations, @RequestParam(name="id") List<String> donationsAccepted) {
         Business business = businessStorage.retrieveBusinessByName(_business);
         for (int i:donations) {
             business.increaseItemsDonated();
         }
-       // for (Donation donation:business.getDonations()){
-       //     donationStorage.deleteDonationById(donation.getId());
-       // }
+//        for (donationsAccepted:business.getDonations()){
+//            donationStorage.deleteDonationById(donation.getId());
+//        }
         businessStorage.saveBusiness(business);
         return "redirect:/donations";
 
     }
+    @RequestMapping("/searchDonations")
+    public String showDonationByName(@RequestParam String _search, Model model) {
+        model.addAttribute("donation", donationStorage.retrieveDonationByName(_search));
+        return "search-display-page";}
 
 
 
