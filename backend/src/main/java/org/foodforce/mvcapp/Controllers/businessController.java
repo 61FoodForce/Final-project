@@ -8,7 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/business")
+
+@RequestMapping("/businesses")
 public class businessController {
     private BusinessStorage businessStorage;
 
@@ -31,15 +32,24 @@ public class businessController {
         model.addAttribute("businesses", businesses );
         return "businessessSample.html";
     }
+    @RequestMapping("/rewards")
+    public String displayAllDonations(Model model) {
+        model.addAttribute("businesses", businessStorage.retrieveAllBusiness());
+        return "rewards-display-page";
+    }
     @GetMapping("{id}")
     public String displayBusiness(@PathVariable long id, Model model) {
         model.addAttribute("business", businessStorage.retrieveBusinessById(id).get());
         return "business.html";
     }
-    @PostMapping("{id}")
-    public String addBusiness(@PathVariable long id, @RequestParam String name, @RequestParam String streetAddress, @RequestParam String city,
-                             @RequestParam String state, @RequestParam String phoneNumber, @RequestParam Boolean isCharity) {
-        Business businessToAdd = new Business(name, streetAddress, city, state, phoneNumber, isCharity);
+    @PostMapping("/addBusiness")
+    public String addBusiness(String _name, String _address, String _phone, String _type){
+        Business businessToAdd;
+        if(_type.equals("business")){
+            businessToAdd = new Business(_name, _address, "Columbus", "Ohio", _phone, false);
+        }else{
+            businessToAdd = new Business(_name, _address, "Columbus", "Ohio", _phone, true);
+        }
         businessStorage.saveBusiness(businessToAdd);
         return "redirect:business.html";
     }

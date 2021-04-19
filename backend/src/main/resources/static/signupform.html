@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,15 +11,16 @@
     
     <div class="sign-up-form">
         <h1>Sign Up Now</h1>
-        <form>
-            <input type="email" class="input-box" placeholder="Your Email">
-            <input type="password" class="input-box" placeholder="Your Password">
-            <p><span><input type="checkbox"></span> I agree to the terms of services</p>
+        <form class="business-sign-up" action="/addBusiness" method="post">
+            <input type="text" class="business-name" name=_name placeholder="BUSINESS NAME"><br><br>
+            <input type="text" class="business-address" name=_address placeholder="STREET ADDRESS"><br><br>
+            <input type="number" class="phone-number" name=_phone placeholder="PHONE NUMBER"><br><br>
+            <label for="business-type">Type of organization:</label>
+            <select id="business-type" name=_type>
+                <option value="business">Business</option>
+                <option value="charity">Charity</option>
+            </select><br><br>
             <button type="button" class="signup-btn">Sign up</button>
-            <hr>
-            <p class="or">OR</p>
-            <button type="button" class="gmail-btn">Login with Gmail</button>
-            <p>Do you have an account ? <a href="#">Sign in</a></p>
 
         </form>
     </div>

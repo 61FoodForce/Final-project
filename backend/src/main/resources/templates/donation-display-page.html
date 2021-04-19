@@ -3,10 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Available Donations</title>
+  <link rel="stylesheet" href="../../static/css/style.css">
 </head>
 
 <body>
 <h2>Food banks and Soup kitchens: Please check the donations you would like and hit Submit</h2>
+<form class="search-form" action="/donations/searchDonations">
+  <input type="text" class="search-box" name="_search" placeholder="SEARCH DONATIONS">
+  <input type="submit">
+</form>
+
 <ul th:each="business : ${businesses}" th:href="@{'/donations'}" >
   <form class="acceptButton" action="/donations/acceptDonation" method="get">
     <l1><h1 th:text="${business.name}"></h1></l1>
@@ -14,12 +20,21 @@
     <ul th:each="donation: ${business.getDonations()}">
 
     <li>
-      <input type="checkbox"  id="donationItem"  name="id" th:value="${donation.getId()}">
+      <input type="checkbox" class="donationItem"  name="id" th:value="${donation.getId()}">
       <label th:for="${donation.getId()}" th:text="${donation.foodQuantity} + ' ' + ${donation.foodUnit} + ' of ' + ${donation.name}"> </label>
       <br>
     </li>
     </ul>
   <br><br>
+
+    <label for="charity">Choose your charity:</label>
+    <select name="charity" id="charity" >
+      <option th:each="nonProfit : ${nonProfits}" th:value="${nonProfit.getId()}" th:text="${nonProfit.getName()}"></option>
+    </select>
+
+
+
+<!--    <input type="text" name="_charity" placeholder="CHARITY ACCEPTING">-->
     <input type="hidden" name="_business" th:value="${business.name}">
     <input type="submit" text="ACCEPT">
 

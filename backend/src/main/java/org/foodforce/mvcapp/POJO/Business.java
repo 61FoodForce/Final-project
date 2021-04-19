@@ -1,8 +1,11 @@
 package org.foodforce.mvcapp.POJO;
 
+
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Optional;
 
 @Entity
 public class Business {
@@ -106,5 +109,15 @@ public class Business {
 
     public void increaseItemsDonated(){
         this.totalItemsDonated++;
+    }
+
+    public Optional<Donation> getDonation(int donationId){
+        Optional<Donation> opt = null;
+        for (Donation donation:this.donations) {
+            if(donation.getId() == donationId){
+               opt = Optional.ofNullable(donation);
+            }
+        }
+       return opt;
     }
 }

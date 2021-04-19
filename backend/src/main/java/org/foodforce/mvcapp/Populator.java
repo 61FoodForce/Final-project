@@ -90,7 +90,7 @@ public class Populator implements CommandLineRunner {
 
 
 
-        Business business8 = new Business( "Trader Joe", "888 Townsfair Way", "Columbus", "Ohio", "614-700-1230", true);
+        Business business8 = new Business( "Trader Joe", "888 Townsfair Way", "Columbus", "Ohio", "614-700-1230", false);
         this.businessStorage.saveBusiness(business8);
 
         Donation donation15= new Donation("Canned Chicken", business8, 20, Donation.Unit.CAN);
@@ -100,8 +100,17 @@ public class Populator implements CommandLineRunner {
 
 
 
-        Business business9 = new Business( "The Refectory Restaurant", "2891 E Main St", "Columbus", "Ohio", "614-700-1350", true);
+        Business business9 = new Business( "The Refectory Restaurant", "2891 E Main St", "Columbus", "Ohio", "614-700-1350", false);
         this.businessStorage.saveBusiness(business9);
+
+        Business nonProfit = new Business( "Mid Ohio Food bank", "555 North High Street", "Columbus", "Ohio", "614-555-6060", true);
+        this.businessStorage.saveBusiness(nonProfit);
+
+        Business nonProfit2 = new Business( "South Roots", "444 Reeb Ave", "Columbus", "Ohio", "614-444-6768", true);
+        this.businessStorage.saveBusiness(nonProfit2);
+
+        Business nonProfit3= new Business( "Church for all people", "999 South Parson", "Columbus", "Ohio", "614-777-6888", true);
+        this.businessStorage.saveBusiness(nonProfit3);
 
         Donation donation17= new Donation("Instant Mashed Potatoes", business9, 27, Donation.Unit.BAG);
         this.donationStorage.saveDonation(donation17);
@@ -110,13 +119,15 @@ public class Populator implements CommandLineRunner {
 
 
 
-        Business business10 = new Business( "The Table", "21 E 5th Ave #101", "Columbus", "Ohio", "614-700-1355", true);
+        Business business10 = new Business( "The Table", "21 E 5th Ave #101", "Columbus", "Ohio", "614-700-1355", false);
         this.businessStorage.saveBusiness(business10);
 
         Donation donation19= new Donation("honey", business10, 15, Donation.Unit.CAN);
         this.donationStorage.saveDonation(donation19);
         Donation donation20= new Donation("dried fruits", business10, 22, Donation.Unit.BAG);
         this.donationStorage.saveDonation(donation20);
+        Donation donation21= new Donation("Chips", business10, 1, Donation.Unit.BAG);
+        this.donationStorage.saveDonation(donation21);
 
 
     }

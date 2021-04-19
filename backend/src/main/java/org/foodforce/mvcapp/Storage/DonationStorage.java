@@ -1,5 +1,6 @@
 package org.foodforce.mvcapp.Storage;
 
+import org.foodforce.mvcapp.POJO.Business;
 import org.foodforce.mvcapp.POJO.Donation;
 import org.foodforce.mvcapp.Repo.DonationRepo;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,10 @@ public class DonationStorage {
 
     public Optional<Donation> retrieveDonationById(Long id) {return donationRepo.findById(id);}
 
+    public Donation retrieveDonationByName(String name){
+        return donationRepo.findByName(name);
 
+    }
     }
 
 

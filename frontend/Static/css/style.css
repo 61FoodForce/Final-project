@@ -246,7 +246,7 @@
   ._container {
       height: 1%; 
       /* border: 1px solid blueviolet;   */
-      justify-content: left;
+     /* justify-content: left;
   
   } 
   /* ._container h1{
@@ -284,5 +284,38 @@
     display: grid;
     grid-column:1/2 ;
     grid-row: 1/2;
+  }
+
+  .rewards-image-container{
+    background-image:url("../images/volunteer.jpg");
+    background-size: 100% auto;
+    height: 400px;
+    /* background-color: yellow; */
+  }
+
+  .rewards-image-container-header{
+    height: 200px;
+    width: 200px;
+    background: transparent;
+    size: 200px;
+    font-size: 100px;
+    margin-left: 50px;
+    color: var(--third-color);
+  }
+
+  .medal-header{
+    background-color: white;
+    color:var(--secondary-color);
+    padding: 10px;
+  }
+
+  .medal-description{
+    background-color: white;
+    color:var(--secondary-color);
+    padding: 10px;
+  }
+
+  .medal{
+    height: 30px;
   }
  
