@@ -40,9 +40,10 @@ public class businessController {
     @GetMapping("{id}")
     public String displayBusiness(@PathVariable long id, Model model) {
         model.addAttribute("business", businessStorage.retrieveBusinessById(id).get());
-        return "business.html";
+        return "business";
     }
-    @PostMapping("/signupfrom.html")
+
+    @PostMapping("/addBusiness")
     public String addBusiness(String _name, String _address, String _phone, String _type){
         Business businessToAdd;
         if(_type.equals("business")){
@@ -51,7 +52,7 @@ public class businessController {
             businessToAdd = new Business(_name, _address, "Columbus", "Ohio", _phone, true);
         }
         businessStorage.saveBusiness(businessToAdd);
-        return "redirect:business.html";
+        return "redirect:/";
     }
 
     @DeleteMapping("{id}")
