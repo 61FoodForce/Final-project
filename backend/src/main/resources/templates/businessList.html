@@ -9,8 +9,8 @@
 <h1>List Of All Businesses</h1>
 <br>
 <ul th:each="business:${businesses}">
-<li th:text="${business.name} "></li>
-<a th:href="@{'businesses/' + ${business.id}}">Click Here for more details</a></li>
+<li th:text="${business.name}"></li>
+<a th:href="@{'business/' + ${business.id}}">Click Here for more details</a></li>
 
 </ul>
 </body>
