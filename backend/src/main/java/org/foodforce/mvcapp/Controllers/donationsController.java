@@ -54,12 +54,38 @@ public class donationsController {
 //        donationStorage.saveDonation(donationToAdd);
 //        return "redirect:";
     @PostMapping("/submitDonation")
-    public String addDonation(String _name, String _business, int _foodQuantity) {
-        Donation donationToAdd = new Donation(_name, businessStorage.retrieveBusinessByName(_business), _foodQuantity, Donation.Unit.CAN);
+    public String addDonation(String _name, int business, int _foodQuantity, String foodUnit) {
+        Donation.Unit unit = Donation.Unit.CAN;
+
+        switch (foodUnit) {
+            case "lbs":
+                unit = Donation.Unit.POUND;
+                break;
+
+            case "cans":
+                unit = Donation.Unit.CAN;
+                break;
+
+            case "gallons":
+                unit = Donation.Unit.GALLONS;
+                break;
+
+            case "box":
+                unit = Donation.Unit.BOX;
+                break;
+
+            case "case":
+                unit = Donation.Unit.CASE;
+                break;
+
+        }
+
+
+        Donation donationToAdd = new Donation(_name, businessStorage.retrieveBusinessById(business).get(), _foodQuantity, unit);
         donationStorage.saveDonation(donationToAdd);
         return "redirect:/donations";
-    }
 
+    }
     @DeleteMapping("/acceptDonation")
     public String deleteDonation(@PathVariable long id) {
        // donationStorage.retrieveDonationById().get
