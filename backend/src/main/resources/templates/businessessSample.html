@@ -10,7 +10,7 @@
 <br>
 <ul th:each="business:${businesses}">
 <li th:text="${business.name} "></li>
-<a th:href="@{'business/' + ${business.id}}">Click Here for more details</a></li>
+<a th:href="@{'businesses/' + ${business.id}}">Click Here for more details</a></li>
 
 </ul>
 </body>
