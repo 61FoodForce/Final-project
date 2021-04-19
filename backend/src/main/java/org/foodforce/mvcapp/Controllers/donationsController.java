@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.*;
 
 @Controller
 @RequestMapping("/donations")
@@ -24,7 +24,20 @@ public class donationsController {
     @RequestMapping("")
     public String displayAllDonations(Model model) {
        // model.addAttribute("donations", donationStorage.retrieveAllDonations());
-        model.addAttribute("businesses", businessStorage.retrieveAllBusiness());
+        Iterable<Business> businesses = businessStorage.retrieveAllBusiness();
+        ArrayList<Business> forProfits = new ArrayList<Business>();
+        ArrayList<Business> nonProfits = new ArrayList<Business>();
+        for (Business business:businesses) {
+            if(business.getCharity()){
+                nonProfits.add(business);
+            }
+            else{
+                forProfits.add(business);
+            }
+        }
+        
+        model.addAttribute("businesses", forProfits);
+        model.addAttribute("nonProfits", nonProfits);
         return "donation-display-page";
     }
 
@@ -47,7 +60,7 @@ public class donationsController {
         return "redirect:/donations";
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/acceptDonation")
     public String deleteDonation(@PathVariable long id) {
        // donationStorage.retrieveDonationById().get
         donationStorage.deleteDonationById(id);
@@ -55,16 +68,45 @@ public class donationsController {
     }
 
     @GetMapping("/acceptDonation")
-    public String increaseDonationCount(@RequestParam String _business, @RequestParam(name="id") List<Integer> donations) {
+    public String increaseDonationCount(@RequestParam String _business, @RequestParam(name="id") List<Integer> donations, @RequestParam(name="charity") int charityId) {
         Business business = businessStorage.retrieveBusinessByName(_business);
         for (int i:donations) {
             business.increaseItemsDonated();
+            Business nonProfit = businessStorage.retrieveBusinessById(charityId).get();
+            business.getDonation(i).get().setBusiness(nonProfit);
+            businessStorage.saveBusiness(business);
+            businessStorage.saveBusiness(nonProfit);
         }
+//        for (donationsAccepted:business.getDonations()){
+//            donationStorage.deleteDonationById(donation.getId());
+//        }
         businessStorage.saveBusiness(business);
         return "redirect:/donations";
+
     }
+//    @RequestMapping("/searchDonations")
+//    public String showDonationByName(@RequestParam String _search, Model model) {
+//        model.addAttribute("donation", donationStorage.retrieveDonationByName(_search));
+//        return "search-display-page";}
 
 
+    @RequestMapping("/searchDonations")
+    public String showDonationByName(@RequestParam String _search, Model model) {
+        Iterable<Donation> donations = donationStorage.retrieveAllDonations();
+        ArrayList<Donation> foundDonations = new ArrayList<Donation>();
+        //Map<String, Donation> searchedDonations = new HashMap<>();
+        for (Donation donation: donations){
+            if (donation.getName().toLowerCase(Locale.ROOT).contains(_search.toLowerCase(Locale.ROOT)) && _search.length()>0){
+                foundDonations.add(donation);
+            }
+        }
+        model.addAttribute("foundDonations", foundDonations);
+        return "search-display-page";}
 
-
+    @RequestMapping("/donationForm")
+    public String donationForm(Model model){
+        Iterable<Business> businesses = businessStorage.retrieveAllBusiness();
+        model.addAttribute("businesses", businesses);
+        return "donationForm";
+    }
 }

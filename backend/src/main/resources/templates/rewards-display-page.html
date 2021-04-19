@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>Gold</h1>
+<ul th:each="business : ${businesses}" th:href="@{'/rewards'}" >
+  <span th:if="${business.getTotalItemsDonated() ge 10}"><p th:text="${business.name}"></p></span>
+</ul>
+<h1>Silver</h1>
+<ul th:each="business : ${businesses}" th:href="@{'/rewards'}" >
+  <span th:if="${business.getTotalItemsDonated() ge 5 and business.getTotalItemsDonated() lt 10}"><p th:text="${business.name}"></p></span>
+</ul>
+<h1>Bronze</h1>
+<ul th:each="business : ${businesses}" th:href="@{'/rewards'}" >
+  <span th:if="${business.getTotalItemsDonated() gt 1 and business.getTotalItemsDonated() lt 5}"><p th:text="${business.name}"></p></span>
+</ul>
+</body>
+</html>
