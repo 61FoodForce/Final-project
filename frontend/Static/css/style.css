@@ -48,8 +48,10 @@
   
   /* Styles the image container */
   .image-container{
-    background-image:url("../images/produce3.jpg");
+    background-image:url(../images/produce3.jpg);
     background-size: 100% auto;
+    height: 650px;
+    align-items: center;
     /* background-color: yellow; */
   }
 
