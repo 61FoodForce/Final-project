@@ -40,7 +40,6 @@ public class Populator implements CommandLineRunner {
 
 
 
-
         Business business3 = new Business( "Aldim", "123 left street", "Columbus", "Ohio", "614-555-6700", false);
         this.businessStorage.saveBusiness(business3);
 

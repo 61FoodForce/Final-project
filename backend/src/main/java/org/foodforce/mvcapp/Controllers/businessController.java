@@ -17,7 +17,7 @@ public class businessController {
         this.businessStorage = businessStorage;
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public String displayBusinesses(Model model) {
         Iterable<Business> businesses = businessStorage.retrieveAllBusiness();
         for (Business business: businesses) {
@@ -42,14 +42,17 @@ public class businessController {
         model.addAttribute("business", businessStorage.retrieveBusinessById(id).get());
         return "business.html";
     }
-    @PostMapping("{id}")
-    public String addBusiness(@PathVariable long id, @RequestParam String name, @RequestParam String streetAddress, @RequestParam String city,
-                             @RequestParam String state, @RequestParam String phoneNumber, @RequestParam Boolean isCharity) {
-        Business businessToAdd = new Business(name, streetAddress, city, state, phoneNumber, isCharity);
+    @PostMapping("/addBusiness")
+    public String addBusiness(String _name, String _address, String _phone, String _type){
+        Business businessToAdd;
+        if(_type.equals("business")){
+            businessToAdd = new Business(_name, _address, "Columbus", "Ohio", _phone, false);
+        }else{
+            businessToAdd = new Business(_name, _address, "Columbus", "Ohio", _phone, true);
+        }
         businessStorage.saveBusiness(businessToAdd);
         return "redirect:business.html";
     }
-
 
     @DeleteMapping("{id}")
     public String deleteBusiness(@PathVariable long id){
