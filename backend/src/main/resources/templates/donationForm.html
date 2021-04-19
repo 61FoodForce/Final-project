@@ -23,16 +23,14 @@
       <li><a class="nav-list-element" href="rewardsPage.HTML"><i class="fas fa-award"></i> Rewards </a></li>
       </nav>
     <h1 class="donation-header">Business Donation Form</h1><br><br>
-<<<<<<< HEAD:backend/src/main/resources/static/donationform.html
+
     <form action="/submitDonation" method="POST" class="donation-form">
-      <input class="business-name" type="text" name="_business" placeholder="BUSINESS NAME"><br><br>
-=======
+
     <form action="/donations/submitDonation" method="POST" class="donation-form">
       <label for="business">Choose your business:</label><br><br>
       <select name="business" id="business" >
         <option th:each="business : ${businesses}" th:value="${business.getId()}" th:text="${business.getName()}"></option>
       </select><br><br>
->>>>>>> dev:backend/src/main/resources/templates/donationForm.html
 <!--      <input class="business-street-address" type="text" name="_" placeholder="STREET ADDRESS"><br><br>-->
       <input class="donation-item" type="text" name="_name" placeholder="ITEM"><br><br>
       <input class="donation-quantity" type="number" name="_foodQuantity" placeholder="QUANTITY">
