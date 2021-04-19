@@ -42,7 +42,7 @@ public class businessController {
         model.addAttribute("business", businessStorage.retrieveBusinessById(id).get());
         return "business.html";
     }
-    @PostMapping("/addBusiness")
+    @PostMapping("/signupfrom.html")
     public String addBusiness(String _name, String _address, String _phone, String _type){
         Business businessToAdd;
         if(_type.equals("business")){
