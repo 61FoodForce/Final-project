@@ -3,10 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Available Donations</title>
-  <link rel="stylesheet" href="../../static/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <div th:replace="navbar">...</div>
 <h2>Food banks and Soup kitchens: Please check the donations you would like and hit Submit</h2>
 <form class="search-form" action="/donations/searchDonations">
   <input type="text" class="search-box" name="_search" placeholder="SEARCH DONATIONS">
