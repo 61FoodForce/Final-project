@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 @Controller
-@RequestMapping("/charity")
+@RequestMapping("/charities")
 public class charityController {
     private BusinessStorage businessStorage;
 
@@ -20,7 +20,7 @@ public class charityController {
     }
 
     @GetMapping("")
-    public String displayCharity(Model model) {
+    public String displayCharities(Model model) {
         Iterable<Business> businesses = businessStorage.retrieveAllBusiness();
         ArrayList<Business> charities = new ArrayList<Business>();
         for (Business business : businesses) {
@@ -29,6 +29,11 @@ public class charityController {
             }
         }
         model.addAttribute("charities", charities);
-        return "charity";
+        return "charities";
+    }
+    @GetMapping("{id}")
+    public String displayCharity(@PathVariable long id, Model model) {
+        model.addAttribute("business", businessStorage.retrieveBusinessById(id).get());
+        return "business";
     }
 }

@@ -52,7 +52,12 @@ public class businessController {
             businessToAdd = new Business(_name, _address, "Columbus", "Ohio", _phone, true);
         }
         businessStorage.saveBusiness(businessToAdd);
-        return "redirect:/";
+        if(businessToAdd.getCharity()){
+            return "redirect:/charities/" + businessStorage.retrieveBusinessByName(businessToAdd.getName()).getId();
+        }
+        else{
+            return "redirect:/businesses/" + businessStorage.retrieveBusinessByName(businessToAdd.getName()).getId();
+        }
     }
 
     @DeleteMapping("{id}")
