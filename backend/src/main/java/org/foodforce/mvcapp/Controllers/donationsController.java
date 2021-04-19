@@ -54,8 +54,8 @@ public class donationsController {
 //        donationStorage.saveDonation(donationToAdd);
 //        return "redirect:";
     @PostMapping("/submitDonation")
-    public String addDonation(String _name, String _business, int _foodQuantity, String foodUnit) {
-        Donation.Unit unit;
+    public String addDonation(String _name, int business, int _foodQuantity, String foodUnit) {
+        Donation.Unit unit = Donation.Unit.CAN;
 
         switch (foodUnit) {
             case "lbs":
@@ -70,14 +70,18 @@ public class donationsController {
                 unit = Donation.Unit.GALLONS;
                 break;
 
-            case "boxes":
+            case "box":
+                unit = Donation.Unit.BOX;
+                break;
+
+            case "case":
                 unit = Donation.Unit.CASE;
                 break;
 
         }
 
 
-        Donation donationToAdd = new Donation(_name, businessStorage.retrieveBusinessByName(_business), _foodQuantity, Donation.Unit.CAN);
+        Donation donationToAdd = new Donation(_name, businessStorage.retrieveBusinessById(business).get(), _foodQuantity, unit);
         donationStorage.saveDonation(donationToAdd);
         return "redirect:/donations";
 

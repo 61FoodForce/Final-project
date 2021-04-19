@@ -17,6 +17,7 @@ public class Donation {
         POUND,
         CASE,
         GALLONS,
+        BOX,
         BAG
     }
 
