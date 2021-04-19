@@ -17,7 +17,7 @@ public class businessController {
         this.businessStorage = businessStorage;
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public String displayBusinesses(Model model) {
         Iterable<Business> businesses = businessStorage.retrieveAllBusiness();
         for (Business business: businesses) {
@@ -53,7 +53,6 @@ public class businessController {
         businessStorage.saveBusiness(businessToAdd);
         return "redirect:business.html";
     }
-
 
     @DeleteMapping("{id}")
     public String deleteBusiness(@PathVariable long id){
