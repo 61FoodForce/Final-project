@@ -108,7 +108,7 @@ public class Populator implements CommandLineRunner {
         Business nonProfit2 = new Business( "South Roots", "280 Reeb Ave", "Columbus", "Ohio", "(614) 468-9300", true);
         this.businessStorage.saveBusiness(nonProfit2);
 
-        Business nonProfit3= new Business( "Church for all people", "946 Parsons Ave", "Columbus", "Ohio", "(614) 445-7342", true);
+        Business nonProfit3= new Business( "Church for all people", "946 Parsons Ave", "Columbus", "Ohio", "(614) 445-7342gi", true);
         this.businessStorage.saveBusiness(nonProfit3);
 
         Business nonProfit4= new Business( "Local Matters", "633 Parson ave", "Columbus", "Ohio", "614-263-5662", true);
