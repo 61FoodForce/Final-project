@@ -1,14 +1,12 @@
 package org.foodforce.mvcapp.Controllers;
 
 import org.foodforce.mvcapp.POJO.Business;
-import org.foodforce.mvcapp.POJO.Donation;
 import org.foodforce.mvcapp.Storage.BusinessStorage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 @Controller
 @RequestMapping("/charities")
@@ -29,11 +27,12 @@ public class charityController {
             }
         }
         model.addAttribute("charities", charities);
-        return "charities";
+        return "charityList";
     }
+
     @GetMapping("{id}")
-    public String displayCharity(@PathVariable long id, Model model) {
-        model.addAttribute("business", businessStorage.retrieveBusinessById(id).get());
-        return "business";
+    public String displayBusiness(@PathVariable long id, Model model) {
+        model.addAttribute("charity", businessStorage.retrieveBusinessById(id).get());
+        return "charityDetail";
     }
 }

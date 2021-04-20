@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 
-@RequestMapping("/businesses")
+@RequestMapping("/business")
 public class businessController {
     private BusinessStorage businessStorage;
 
@@ -30,7 +30,7 @@ public class businessController {
         }
 
         model.addAttribute("businesses", businesses );
-        return "businessessSample.html";
+        return "businessList";
     }
     @RequestMapping("/rewards")
     public String displayAllDonations(Model model) {
@@ -40,7 +40,7 @@ public class businessController {
     @GetMapping("{id}")
     public String displayBusiness(@PathVariable long id, Model model) {
         model.addAttribute("business", businessStorage.retrieveBusinessById(id).get());
-        return "business";
+        return "businessDetails";
     }
 
     @PostMapping("/addBusiness")
