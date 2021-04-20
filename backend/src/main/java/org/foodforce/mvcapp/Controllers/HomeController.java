@@ -10,15 +10,25 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 
 @RequestMapping("")
-public class staticController {
+public class HomeController {
 
-    public staticController() {
+    public HomeController() {
     }
 
     @GetMapping("")
     public String homepage() {
+
         return "index";
     }
 
+    @GetMapping("facts")
+    public String factsAboutFoodWaste() {
 
+    return "factsAboutFoodWaste";
+    }
+    @GetMapping("rewards")
+    public String rewardsPage() {
+
+        return "rewardsPage";
+    }
 }
