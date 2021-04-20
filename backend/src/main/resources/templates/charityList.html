@@ -10,7 +10,7 @@
 <br>
 <ul th:each="charity:${charities}">
     <li th:text="${charity.name}"></li>
-    <a th:href="@{'charity/' + ${charity.id}}">Click Here for more details</a></li>
+    <a th:href="@{'charities/' + ${charity.id}}">Click Here for more details</a></li>
 
 </ul>
 </body>
