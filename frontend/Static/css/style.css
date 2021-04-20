@@ -320,4 +320,13 @@
   .medal{
     height: 30px;
   }
+
+  /* Styles the charity Page */
+  .list-of-charities {
+    text-align: center;
+  }
+
+  .charities-header{
+    text-align: center;
+  }
  
