@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/frontend/Static/css/style.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
@@ -16,19 +16,19 @@
     <div th:replace="navbar">...</div>
 
         <div>
-            <h1 center>Details Of Businesses</h1>
+            <h1 class="business-header">Details Of Businesses</h1>
         </div>
 
 
         <ul>
-    <li th:text="${business.name}"></il>
-    <li th:text="${business.streetAddress}"></li>
-    <li th:text="${business.city}"></li>
-    <li th:text="${business.state}"></li>
-    <li th:text="${business.phoneNumber}"></li>
+    <li class="business-list" th:text="${business.name}"></il>
+    <li class="business-list" th:text="${business.streetAddress}"></li>
+    <li class="business-list" th:text="${business.city}"></li>
+    <li class="business-list" th:text="${business.state}"></li>
+    <li class="business-list" th:text="${business.phoneNumber}"></li>
         </ul>
 
-        <h2>List  of donations</h2>
+        <h2 class="list-of-donations-header">List  of donations</h2>
 <ul th:each="donation:${business.donations}">
 <!--<li><a th:href="'/donations/'+${donation.id}">-->
 <span th:text="${donation.foodQuantity} + ' ' + ${donation.foodUnit} + ' of ' + ${donation.name}"></span></a></li>
