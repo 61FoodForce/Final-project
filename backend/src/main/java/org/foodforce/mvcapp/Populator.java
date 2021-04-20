@@ -79,7 +79,7 @@ public class Populator implements CommandLineRunner {
 
 
 
-        Business business7 = new Business( "Saraga International Grocery", "1265 Morse Rd", "Columbus", "Ohio", "614-600-6500", false);
+        Business business7 = new Business( "Hot Chicken Takeover", "4203 N High St", "Columbus", "Ohio", " (614) 754-1151", false);
         this.businessStorage.saveBusiness(business7);
 
         Donation donation13= new Donation("Applesauce", business7, 33, Donation.Unit.CAN);
@@ -96,6 +96,9 @@ public class Populator implements CommandLineRunner {
 
         Business business9 = new Business( "The Refectory Restaurant", "2891 E Main St", "Columbus", "Ohio", "614-700-1350", false);
         this.businessStorage.saveBusiness(business9);
+
+        Business business10 = new Business( "The Table", "21 E 5th Ave #101", "Columbus", "Ohio", "614-700-1355", false);
+        this.businessStorage.saveBusiness(business10);
 
         Donation donation15= new Donation("Canned Chicken", business8, 20, Donation.Unit.CAN);
         this.donationStorage.saveDonation(donation15);
@@ -136,11 +139,6 @@ public class Populator implements CommandLineRunner {
         this.donationStorage.saveDonation(donation17);
         Donation donation18 = new Donation("Dried Spices", business9, 20, Donation.Unit.BAG);
         this.donationStorage.saveDonation(donation18);
-
-
-
-        Business business10 = new Business( "The Table", "21 E 5th Ave #101", "Columbus", "Ohio", "614-700-1355", false);
-        this.businessStorage.saveBusiness(business10);
 
         Donation donation19= new Donation("honey", business10, 15, Donation.Unit.CAN);
         this.donationStorage.saveDonation(donation19);

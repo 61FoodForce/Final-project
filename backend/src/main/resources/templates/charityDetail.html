@@ -21,7 +21,16 @@
         <li th:text="${charity.state}"></li>
         <li th:text="${charity.phoneNumber}"></li>
     </ul>
+        <h2>Ready for Pickup</h2>
+        <ul th:each="donation:${pickUpList}">
+            <!--<li><a th:href="'/donations/'+${donation.id}">-->
+            <form class="acceptButton" action="/charities/receivedItem" method="get">
+            <span th:text="${donation.foodQuantity} + ' ' + ${donation.foodUnit} + ' of ' + ${donation.name} + ' @' + ${donation.getDonatedBy()}"></span></a></li>
+            <input type="hidden" name="donationId" th:value="${donation.getId()}">
+                <Button type="submit">Received</Button>
 
+            </form>
+        </ul>
     <h2>List  of recieved donations</h2>
     <ul th:each="donation:${charity.donations}">
         <!--<li><a th:href="'/donations/'+${donation.id}">-->

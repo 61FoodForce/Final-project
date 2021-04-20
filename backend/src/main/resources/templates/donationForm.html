@@ -21,7 +21,7 @@
     <form action="/donations/submitDonation" method="POST" class="donation-form">
       <label for="business">Choose your business:</label><br><br>
       <select name="business" id="business" >
-        <option th:each="business : ${businesses}" th:value="${business.getId()}" th:text="${business.getName()}"></option>
+        <option th:each="business:${businesses}"th:value="${business.getId()}"th:text="${business.getName()}"></option>
       </select><br><br>
 <!--      <input class="business-street-address" type="text" name="_" placeholder="STREET ADDRESS"><br><br>-->
       <input class="donation-item" type="text" name="_name" placeholder="ITEM"><br><br>

@@ -23,21 +23,10 @@ public class donationsController {
     // Displays all donations to donation display page.
     @RequestMapping("")
     public String displayAllDonations(Model model) {
-       // model.addAttribute("donations", donationStorage.retrieveAllDonations());
-        Iterable<Business> businesses = businessStorage.retrieveAllBusiness();
-        ArrayList<Business> forProfits = new ArrayList<Business>();
-        ArrayList<Business> nonProfits = new ArrayList<Business>();
-        for (Business business:businesses) {
-            if(business.getCharity()){
-                nonProfits.add(business);
-            }
-            else{
-                forProfits.add(business);
-            }
-        }
-        
-        model.addAttribute("businesses", forProfits);
-        model.addAttribute("nonProfits", nonProfits);
+
+            model.addAttribute("businesses", businessStorage.retrieveAllForProfit());
+            model.addAttribute("nonProfits", businessStorage.retrieveAllCharities());
+
         return "donation-display-page";
     }
 
@@ -99,6 +88,8 @@ public class donationsController {
         for (int i:donations) {
             business.increaseItemsDonated();
             Business nonProfit = businessStorage.retrieveBusinessById(charityId).get();
+            business.getDonation(i).get().setReadyForPickup(true);
+            business.getDonation(i).get().setDonatedBy(business.getName());
             business.getDonation(i).get().setBusiness(nonProfit);
             businessStorage.saveBusiness(business);
             businessStorage.saveBusiness(nonProfit);
@@ -107,7 +98,7 @@ public class donationsController {
 //            donationStorage.deleteDonationById(donation.getId());
 //        }
         businessStorage.saveBusiness(business);
-        return "redirect:/donations";
+        return "redirect:/charities/"+charityId;
 
     }
 //    @RequestMapping("/searchDonations")
@@ -126,12 +117,14 @@ public class donationsController {
                 foundDonations.add(donation);
             }
         }
+        model.addAttribute("nonProfits", businessStorage.retrieveAllCharities());
         model.addAttribute("foundDonations", foundDonations);
-        return "search-display-page";}
+        return "/search-display-page";}
 
     @RequestMapping("/donationForm")
     public String donationForm(Model model){
-        Iterable<Business> businesses = businessStorage.retrieveAllBusiness();
+        Iterable<Business> businesses = businessStorage.retrieveAllForProfit();
+
         model.addAttribute("businesses", businesses);
         return "donationForm";
     }
