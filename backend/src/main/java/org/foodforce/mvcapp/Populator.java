@@ -93,24 +93,44 @@ public class Populator implements CommandLineRunner {
         Business business8 = new Business( "Trader Joe", "888 Townsfair Way", "Columbus", "Ohio", "614-700-1230", false);
         this.businessStorage.saveBusiness(business8);
 
+
+        Business business9 = new Business( "The Refectory Restaurant", "2891 E Main St", "Columbus", "Ohio", "614-700-1350", false);
+        this.businessStorage.saveBusiness(business9);
+
         Donation donation15= new Donation("Canned Chicken", business8, 20, Donation.Unit.CAN);
         this.donationStorage.saveDonation(donation15);
         Donation donation16 = new Donation("Crackers", business8, 60, Donation.Unit.BAG);
         this.donationStorage.saveDonation(donation16);
 
-
-
-        Business business9 = new Business( "The Refectory Restaurant", "2891 E Main St", "Columbus", "Ohio", "614-700-1350", false);
-        this.businessStorage.saveBusiness(business9);
-
-        Business nonProfit = new Business( "Mid Ohio Food bank", "555 North High Street", "Columbus", "Ohio", "614-555-6060", true);
+        Business nonProfit = new Business( "Mid Ohio Food bank", "3960 Brookham Drive", "Columbus", "Ohio", "614-277-3663", true);
         this.businessStorage.saveBusiness(nonProfit);
 
-        Business nonProfit2 = new Business( "South Roots", "444 Reeb Ave", "Columbus", "Ohio", "614-444-6768", true);
+        Business nonProfit2 = new Business( "South Roots", "280 Reeb Ave", "Columbus", "Ohio", "(614) 468-9300", true);
         this.businessStorage.saveBusiness(nonProfit2);
 
-        Business nonProfit3= new Business( "Church for all people", "999 South Parson", "Columbus", "Ohio", "614-777-6888", true);
+        Business nonProfit3= new Business( "Church for all people", "946 Parsons Ave", "Columbus", "Ohio", "(614) 445-7342", true);
         this.businessStorage.saveBusiness(nonProfit3);
+
+        Business nonProfit4= new Business( "Local Matters", "633 Parson ave", "Columbus", "Ohio", "614-263-5662", true);
+        this.businessStorage.saveBusiness(nonProfit4);
+
+        Business nonProfit5= new Business( "Sprouting Spoon", "194 West 1st St", "Columbus", "Ohio", "614-777-6888", true);
+        this.businessStorage.saveBusiness(nonProfit5);
+
+        Business nonProfit6= new Business( "Children Hunger Alliance", "1105 Schrock Rd", "Columbus", "Ohio", "614-341-7700", true);
+        this.businessStorage.saveBusiness(nonProfit6);
+
+        Business nonProfit7= new Business( "Heart Food Pantry", "6475  East Main St", "Columbus", "Ohio", "614-600-6065", true);
+        this.businessStorage.saveBusiness(nonProfit7);
+
+        Business nonProfit8= new Business( "Food for Hunger", " 1684 Venture Dr", "Mt Vernon", "Ohio", "614-341-7700", true);
+        this.businessStorage.saveBusiness(nonProfit8);
+
+        Business nonProfit9= new Business( "Nnemap Food Pantry", " 677 East 11th ave", "Columbus", "Ohio", "614-297-0533", true);
+        this.businessStorage.saveBusiness(nonProfit9);
+
+        Business nonProfit10= new Business( "Hillard Food Pantry", " 4410 Cemetery Rd", "Columbus", "Ohio", " (614) 363-4159", true);
+        this.businessStorage.saveBusiness(nonProfit10);
 
         Donation donation17= new Donation("Instant Mashed Potatoes", business9, 27, Donation.Unit.BAG);
         this.donationStorage.saveDonation(donation17);
