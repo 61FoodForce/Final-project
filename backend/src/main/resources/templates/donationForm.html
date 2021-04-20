@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <!--  <link rel="stylesheet" href="../../css/style.css">-->
-  <link rel="stylesheet" href="/frontend/Static/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 <head>
@@ -15,13 +15,7 @@
 
 <body>
   <div class="donation-page">
-    <nav class="nav-bar"> 
-      <h1><a class="nav-list-element" href="homepage.html"> 6-1-Food Force</a></h1>
-      <li><a class="nav-list-element" href="factsAboutFoodWaste.html"><i class="far fa-building"></i> Facts About Food Waste </a></li>
-      <li><a class="nav-list-element" href="foodReduction.html"><i class="fas fa-recycle"></i>Food Reduction </a></li>
-      <li><a class="nav-list-element" href="lowCostfoodresources.HTML"><i class="fas fa-utensils"></i> Free Food Resources </a></li>
-      <li><a class="nav-list-element" href="rewardsPage.HTML"><i class="fas fa-award"></i> Rewards </a></li>
-      </nav>
+    <div th:replace="navbar">...</div>
     <h1 class="donation-header">Business Donation Form</h1><br><br>
 
     <form action="/donations/submitDonation" method="POST" class="donation-form">

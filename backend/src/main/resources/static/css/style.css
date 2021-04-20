@@ -321,3 +321,7 @@
     height: 30px;
   }
  
+  /* Style for business details */ 
+  .business-list{
+    list-style-type: none;
+  }
