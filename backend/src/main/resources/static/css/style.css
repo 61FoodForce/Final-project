@@ -32,7 +32,7 @@
     margin-bottom: 20px;
   }
   .navbar .container-fluid{
-    width: 91.5%;
+    width: 100.5%;
   }
 
   .navbar-light .navbar-nav .nav-link {
@@ -246,6 +246,12 @@
     height: 500px;
     background-position: center;
     
+  }
+  .carousel-caption {
+
+    bottom: 9.25rem;
+    color:#dee2e6;
+
   }
 
   .hunger-container-text{

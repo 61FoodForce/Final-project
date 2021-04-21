@@ -5,6 +5,7 @@
   <title>Title</title>
 </head>
 <body>
+<main>
 <h1>Gold</h1>
 <ul th:each="business : ${businesses}" th:href="@{'/rewards'}" >
   <span th:if="${business.getTotalItemsDonated() ge 10}"><p th:text="${business.name}"></p></span>
@@ -17,5 +18,6 @@
 <ul th:each="business : ${businesses}" th:href="@{'/rewards'}" >
   <span th:if="${business.getTotalItemsDonated() gt 1 and business.getTotalItemsDonated() lt 5}"><p th:text="${business.name}"></p></span>
 </ul>
+</main>
 </body>
 </html>

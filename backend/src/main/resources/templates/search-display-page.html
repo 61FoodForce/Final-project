@@ -5,7 +5,7 @@
   <title>Found Results</title>
 </head>
 <body>
-
+<main>
   <form class="acceptButton" action="/donations/acceptDonation" method="get">
     <h1 th:if="${foundDonations.size() == 0}">0 Results</h1>
     <h1 th:if="${foundDonations.size() gt 0}">Results</h1>
@@ -23,6 +23,6 @@
     <input type="submit" text="ACCEPT">
     </ul>
   </form>
-
+</main>
 </body>
 </html>
