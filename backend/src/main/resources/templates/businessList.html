@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="/css/style.css">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Businesses View</title>
+</head>
+<body>
+    <div th:replace="navbar">...</div>
+<h1 class="list-of-all-businesses-header">List Of All Businesses</h1>
+<br>
+<ul class="business-list" th:each="business:${businesses}">
+<li th:text="${business.name} "></li>
+<a th:href="@{'businesses/' + ${business.id}}">Click Here for more details</a></li>
+
+</ul>
+</body>
+<footer>
+    <div>
+    <c>Copyright @2021-WCCI</c>
+    </div>
+  </footer>
+</html>

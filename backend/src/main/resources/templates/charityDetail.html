@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Businesses</title>
+</head>
+<main>
+    <body>
+        <div th:replace="navbar">...</div>
+    <div class="header">
+        <h1 center>Details Of Businesses</h1>
+    </div>
+
+
+    <ul>
+        <li th:text="${charity.name}"></il>
+        <li th:text="${charity.streetAddress}"></li>
+        <li th:text="${charity.city}"></li>
+        <li th:text="${charity.state}"></li>
+        <li th:text="${charity.phoneNumber}"></li>
+    </ul>
+        <h2>Ready for Pickup</h2>
+        <ul th:each="donation:${pickUpList}">
+            <!--<li><a th:href="'/donations/'+${donation.id}">-->
+            <form class="acceptButton" action="/charities/receivedItem" method="get">
+            <span th:text="${donation.foodQuantity} + ' ' + ${donation.foodUnit} + ' of ' + ${donation.name} + ' @' + ${donation.getDonatedBy()}"></span></a></li>
+            <input type="hidden" name="donationId" th:value="${donation.getId()}">
+                <Button type="submit">Received</Button>
+
+            </form>
+        </ul>
+    <h2>List  of recieved donations</h2>
+    <ul th:each="donation:${charity.donations}">
+        <!--<li><a th:href="'/donations/'+${donation.id}">-->
+        <span th:text="${donation.foodQuantity} + ' ' + ${donation.foodUnit} + ' of ' + ${donation.name}"></span></a></li>
+    </ul>
+
+</main>
+
+
+
+</body>
+<footer>
+    <div>
+        <c>Copyright @2021-WCCI</c>
+    </div>
+</footer>
+
+</html>
+

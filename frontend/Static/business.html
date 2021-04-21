@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!-- Jordan Was Here -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business</title>
+</head>
+<body>
+    <!-- <iframe
+  width="600"
+  height="450"
+  style="border:0"
+  loading="lazy"
+  allowfullscreen
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBpD3iT66BqtP0rWT9L2EjfTlIBh4yW-1U
+    &q=Columbus+OH">
+</iframe> -->
+
+  <!-- <iframe
+  width="600"
+  height="450"
+  style="border:0"
+  loading="lazy"
+  allowfullscreen
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBpD3iT66BqtP0rWT9L2EjfTlIBh4yW-1U
+    &q=Columbus+Oh">
+</iframe> -->
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  
+  <body>
+    <div id="map"></div>
+    <!-- <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyBpD3iT66BqtP0rWT9L2EjfTlIBh4yW-1U"></script> -->
+    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBpD3iT66BqtP0rWT9L2EjfTlIBh4yW-1U"
+        type="text/javascript"></script>
+    <style type="text/css">
+      html, body, #map { height: 100%; margin: 0; }
+    </style>
+    <script type="text/javascript">
+    function initialize() {
+      var map = new google.maps.Map(
+        document.getElementById('map'), {
+          center: new google.maps.LatLng(39.96199, -83.00275),
+          zoom: 11,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
+      var marker1 = new google.maps.Marker({
+            position: new google.maps.LatLng(39.88132095336914, -83.05027770996094),
+            map: map,
+            title: 'Mid-Ohio Food Bank',
+      });
+      var marker2 = new google.maps.Marker({
+            position: new google.maps.LatLng(39.9612119, -83.0180404),
+            map: map,
+            title: 'Holy Family Soup Kitchen',
+      });
+      var marker3 = new google.maps.Marker({
+            position: new google.maps.LatLng(39.9519408, -83.0180404),
+            map: map,
+            title: 'Community Kitchen',
+      });
+      var marker4 = new google.maps.Marker({
+            position: new google.maps.LatLng(39.9519408, -83.0180404),
+            map: map,
+            title: 'Community Kitchen',
+      });
+      var marker4 = new google.maps.Marker({
+            position: new google.maps.LatLng(39.957805, -82.971933),
+            map: map,
+            title: 'First English Lutheran Church',
+      });
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </body>
+</html>
+</body>
+</html>
