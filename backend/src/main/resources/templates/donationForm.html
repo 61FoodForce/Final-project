@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-<!--  <link rel="stylesheet" href="../../css/style.css">-->
-  <link rel="stylesheet" href="/css/style.css">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Donation Form</title>
-    <script src="https://kit.fontawesome.com/8f90320c69.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <title>Donationform</title>
 </head>
 
 <body>
+<main>
+<div th:replace="fragment/navbar">...</div>
   <div class="donation-page">
+<<<<<<< HEAD
+
+    <h1 class="donation-header">Business Donation Form</h1><br><br>
+    <form action="/submitDonation" method="POST" class="donation-form">
+      <input class="business-name" type="text" name="_business" placeholder="BUSINESS NAME"><br><br>
+=======
     <div th:replace="navbar">...</div>
     <h1 class="donation-header">Business Donation Form</h1><br><br>
 
@@ -23,23 +29,21 @@
       <select name="business" id="business" >
         <option th:each="business:${businesses}"th:value="${business.getId()}"th:text="${business.getName()}"></option>
       </select><br><br>
+>>>>>>> dev
 <!--      <input class="business-street-address" type="text" name="_" placeholder="STREET ADDRESS"><br><br>-->
       <input class="donation-item" type="text" name="_name" placeholder="ITEM"><br><br>
       <input class="donation-quantity" type="number" name="_foodQuantity" placeholder="QUANTITY">
-      <select id="donation-type" name="foodUnit">
+      <select id="donation-type" name="_foodUnit">
         <option value="lbs">lbs</option>
         <option value="gallons">gallons</option>
         <option value="cans">cans</option>
-        <option value="box">box</option>
-        <option value="case">case</option>
+        <option value="boxes">boxes</option>
       </select><br><br>
       <input type="submit" value="Submit">
     </form>
   </div>
-  <footer>
-    <h4 class="footer-text"> Copyright 2021- WCCI </h4>
-</footer>
+</main>
 </body>
+<div th:replace="fragment/footer">...</div>
 </html>
 
-</html>

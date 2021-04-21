@@ -9,9 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 </head>
 <body>
+<<<<<<< HEAD
+<main>
+<h1>Gold</h1>
+=======
   <div th:replace="navbar">...</div>
 <h1 class="rewards-headers">Gold</h1>
 <hr>
+>>>>>>> dev
 <ul th:each="business : ${businesses}" th:href="@{'/rewards'}" >
   <span th:if="${business.getTotalItemsDonated() ge 10}"><p th:text="${business.name}"></p></span>
 </ul>
@@ -25,6 +30,7 @@
 <ul th:each="business : ${businesses}" th:href="@{'/rewards'}" >
   <span th:if="${business.getTotalItemsDonated() gt 1 and business.getTotalItemsDonated() lt 5}"><p th:text="${business.name}"></p></span>
 </ul>
+</main>
 </body>
 <footer>
   <div>
