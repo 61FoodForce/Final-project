@@ -23,7 +23,7 @@ public class donationsController {
     // Displays all donations to donation display page.
     @RequestMapping("")
     public String displayAllDonations(Model model) {
-<<<<<<< HEAD
+
        // model.addAttribute("donations", donationStorage.retrieveAllDonations());
         Iterable<Business> businesses = businessStorage.retrieveAllBusiness();
         ArrayList<Business> forProfits = new ArrayList<Business>();
@@ -40,13 +40,8 @@ public class donationsController {
         model.addAttribute("businesses", forProfits);
         model.addAttribute("nonProfits", nonProfits);
         return "donationdisplayPage";
-=======
 
-            model.addAttribute("businesses", businessStorage.retrieveAllForProfit());
-            model.addAttribute("nonProfits", businessStorage.retrieveAllCharities());
 
-        return "donation-display-page";
->>>>>>> dev
     }
 
     //Allows user to search donations

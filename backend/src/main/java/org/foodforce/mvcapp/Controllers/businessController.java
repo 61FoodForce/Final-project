@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 
-@RequestMapping("/businesses")
+@RequestMapping("/business")
 public class businessController {
     private BusinessStorage businessStorage;
 
