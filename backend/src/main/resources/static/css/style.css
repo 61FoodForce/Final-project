@@ -365,3 +365,24 @@
   .business-list{
     list-style-type: none;
   }
+
+
+  /* foodReduction background */
+  .food_waste{
+    background-image:url("../images/foodWaste.jpg");
+    background-size: 100% auto;
+    height: 400px;
+    ;
+  }
+  ._main_container_waste{
+    background: rgba(199, 199, 199, .9);
+    max-width: 700px;
+  }
+  .foodReduction_header{
+    display: flex;
+    justify-content: center;
+  }
+  .foodReduction_header_restaurants{
+    display: flex;
+    justify-content: center;
+  }
