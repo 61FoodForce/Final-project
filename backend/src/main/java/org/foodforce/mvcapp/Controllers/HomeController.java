@@ -1,10 +1,6 @@
 package org.foodforce.mvcapp.Controllers;
 
-import org.foodforce.mvcapp.POJO.Business;
-import org.foodforce.mvcapp.POJO.Donation;
-import org.foodforce.mvcapp.Storage.BusinessStorage;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -24,11 +20,37 @@ public class HomeController {
     @GetMapping("facts")
     public String factsAboutFoodWaste() {
 
-    return "factsAboutFoodWaste";
+        return "factsAboutFoodWaste";
     }
+
+    @GetMapping("charityLocation")
+    public String charityLocation() {
+
+        return "CharityLocation";
+    }
+
     @GetMapping("rewards")
     public String rewardsPage() {
 
         return "rewardsPage";
     }
+
+
+    @GetMapping("foodreduction")
+    public String foodReduction() {
+
+        return "foodReduction";
+    }
+
+    @GetMapping("donationform")
+    public String donationform() {
+
+        return "donationForm";
+    }
+//
+//    @GetMapping("donation-display-page")
+//    public String donationdisplayPage() {
+//
+//        return "donationdisplayPage";
+//    }
 }

@@ -38,7 +38,7 @@ public class donationsController {
         
         model.addAttribute("businesses", forProfits);
         model.addAttribute("nonProfits", nonProfits);
-        return "donation-display-page";
+        return "donationdisplayPage";
     }
 
     //Allows user to search donations
