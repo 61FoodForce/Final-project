@@ -1,9 +1,9 @@
 /* Creates the CSS Variables */
 :root{
     --primary-color: #81b214;
-    --secondary-color:  #f58634;
+    --secondary-color: #f58634;
     --third-color: #ffcc29;
-    --fourth-color: #f58634;
+    --fourth-color: rgba(245, 134, 52, 0.3);
     --fifth-color: black;
     --sixth-color: white;
     --text-color: white;
@@ -11,12 +11,40 @@
   /* Base Style Settings for CSS */
   *{
     margin: auto;
-    background-color: var(--primary-color);
+    /* background-color: var(--primary-color);
     color: var(--text-color);
-    font-family: 'Varela Round', sans-serif;
+    font-family: 'Varela Round', sans-serif;*/
+  }
+
+  main{
+    width: 90%;
+    margin: auto;
+  }
+
+  .text-center{
+    text-align: center;
   }
   
   /* Styles the navigation bar */
+  .navbar{
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    margin-bottom: 20px;
+  }
+  .navbar .container-fluid{
+    width: 100.5%;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    color: var(--text-color)!important;
+  }
+  .navbar-light .navbar-nav .nav-link.active {
+    color: var(--fifth-color)!important;
+  }
+  .navbar-light .navbar-brand {
+    color: var(--text-color)!important;
+  }
+
   .nav-bar{
     display: flex;
     flex-direction: row;
@@ -101,13 +129,10 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
+    color: var(--text-color);
     height: 40px;
-  }
-
-  .footer-text{
-    color: white;
-    background-color: var(--secondary-color)
+    margin-top: 20px;
   }
 
   /* Styles the image container's header */
@@ -131,16 +156,25 @@
     color: var(--primary-color)
   }
 
+  .logo-list img{
+    height: 80px;
+    margin: 10px;
+  }
+
   /* Styles the mission Statement */
   .mission-statement{
     border: solid 2px;
     background-color: white;
   }
 
-  /* Styles the top donators section */
+  /* Styles the top donators section
   .top-donators-section{
     border: solid 2px;
     background-color: white;
+  } */
+  .top-donators-section ul{
+    width: max-content;
+    margin: auto;
   }
 
 
@@ -212,6 +246,12 @@
     height: 500px;
     background-position: center;
     
+  }
+  .carousel-caption {
+
+    bottom: 9.25rem;
+    color:#dee2e6;
+
   }
 
   .hunger-container-text{
@@ -321,3 +361,7 @@
     height: 30px;
   }
  
+  /* Style for business details */ 
+  .business-list{
+    list-style-type: none;
+  }

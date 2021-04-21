@@ -4,6 +4,7 @@ import org.foodforce.mvcapp.POJO.Business;
 import org.foodforce.mvcapp.Repo.BusinessRepo;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 @Service
@@ -26,4 +27,25 @@ public class BusinessStorage {
         return businessRepo.findByName(name);
 
     }
+    public Iterable<Business> retrieveAllCharities(){
+
+        ArrayList<Business> charities = new ArrayList<Business>();
+        for (Business business : businessRepo.findAll()) {
+            if (business.getCharity()) {
+                charities.add(business);
+            }
+        }
+        return charities;
+    }
+    public Iterable<Business> retrieveAllForProfit(){
+
+        ArrayList<Business> forProfit = new ArrayList<Business>();
+        for (Business business : businessRepo.findAll()) {
+            if (!business.getCharity()) {
+                forProfit.add(business);
+            }
+        }
+        return forProfit;
+    }
+
 }
