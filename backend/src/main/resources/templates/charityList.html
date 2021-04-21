@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<<<<<<< HEAD
+=======
+<link rel="stylesheet" href="/css/style.css">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+>>>>>>> dev
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,12 +19,20 @@
     <title>List of charities</title>
 </head>
 <body>
+<<<<<<< HEAD
 <main>
 <div th:replace="fragment/navbar">...</div>
 <h1>List Of All Charities</h1>
 <br>
 <ul th:each="charity:${charities}">
     <li th:text="${charity.name}"></li>
+=======
+    <div th:replace="navbar">...</div>
+<h1 class="charities-header">List Of All Charities</h1>
+<br>
+<ul class="list-of-charities" th:each="charity:${charities}">
+    <li th:text="${charity.name} "></li>
+>>>>>>> dev
     <a th:href="@{'charities/' + ${charity.id}}">Click Here for more details</a></li>
 
 </ul>
@@ -24,5 +40,13 @@
 
 </main>
 </body>
+<<<<<<< HEAD
 <div th:replace="fragment/footer">...</div>
+=======
+<footer>
+    <div>
+    <c>Copyright @2021-WCCI</c>
+    </div>
+  </footer>
+>>>>>>> dev
 </html>

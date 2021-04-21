@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -11,6 +9,7 @@
     <title>Business Detail</title>
     </head>
     <body>
+<<<<<<< HEAD
         <div th:replace="fragment/navbar">...</div>
         <main>
             <div>
@@ -43,5 +42,39 @@
         </main>
     </body>
     <div th:replace="fragment/footer">...</div>
+=======
+    <div th:replace="navbar">...</div>
+
+        <div>
+            <h1 class="business-header">Details Of Businesses</h1>
+        </div>
+
+
+        <ul>
+    <li class="business-list" th:text="${business.name}"></il>
+    <li class="business-list" th:text="${business.streetAddress}"></li>
+    <li class="business-list" th:text="${business.city}"></li>
+    <li class="business-list" th:text="${business.state}"></li>
+    <li class="business-list" th:text="${business.phoneNumber}"></li>
+        </ul>
+
+        <h2 class="list-of-donations-header">List  of donations</h2>
+<ul th:each="donation:${business.donations}">
+<!--<li><a th:href="'/donations/'+${donation.id}">-->
+<span th:text="${donation.foodQuantity} + ' ' + ${donation.foodUnit} + ' of ' + ${donation.name}"></span></a></li>
+</ul>
+    
+</main>
+
+
+    
+</body>
+<footer>
+    <div>
+    <c>Copyright @2021-WCCI</c>
+    </div>
+  </footer>
+
+>>>>>>> dev
 </html>
 

@@ -320,4 +320,59 @@
   .medal{
     height: 30px;
   }
+
+  /* Styles the charity Page */
+  .list-of-charities {
+    text-align: center;
+    list-style-type: none;
+  }
+
+  .charities-header{
+    text-align: center;
+   
+  }
+
+  /* Styles the Business HTML Page */
+  .business-header{
+    text-align: center;
+  }
+
+  .business-list{
+    list-style-type: none;
+    text-align: center;
+  }
+
+  .list-of-donations-header{
+    text-align: center;
+  }
+
+  /* Styles the businesses sample page */
+  .list-of-all-businesses-header{
+    text-align: center;
+  }
+
+  /* Styles the Donation Display Page */
+  .donation-display-header{
+    text-align: center;
+  }
+
+  .business-donations-list{
+    text-align: center;
+  }
+
+  .search-form{
+    text-align: center;
+  }
+
+  /* Styles the rewards display page */
+  .rewards-headers{
+    text-align: center;
+  }
+
+
+  
+
+
+
+
  

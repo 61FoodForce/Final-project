@@ -2,11 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
+<<<<<<< HEAD:backend/src/main/resources/templates/donationdisplayPage.html
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+=======
+  <title>Available Donations</title>
+>>>>>>> dev:backend/src/main/resources/templates/donation-display-page.html
   <link rel="stylesheet" href="/css/style.css">
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+<<<<<<< HEAD:backend/src/main/resources/templates/donationdisplayPage.html
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
   <title>Donation Display Page</title>
 </head>
@@ -16,12 +21,19 @@
 <div th:replace="fragment/navbar">...</div>
 
 <h3>Food banks and Soup kitchens: Please check the donations you would like and hit Submit</h3>
+=======
+</head>
+
+<body>
+  <div th:replace="navbar">...</div>
+<h2 class="donation-display-header">Food banks and Soup kitchens: Please check the donations you would like and hit Submit</h2>
+>>>>>>> dev:backend/src/main/resources/templates/donation-display-page.html
 <form class="search-form" action="/donations/searchDonations">
   <input type="text" class="search-box" name="_search" placeholder="SEARCH DONATIONS">
   <input type="submit">
 </form>
 
-<ul th:each="business : ${businesses}" th:href="@{'/donations'}" >
+<ul class="business-donations-list" th:each="business : ${businesses}" th:href="@{'/donations'}" >
   <form class="acceptButton" action="/donations/acceptDonation" method="get">
     <l1><h1 th:text="${business.name}"></h1></l1>
     <hr>
@@ -50,5 +62,13 @@
   </ul>
 </main>
 </body>
+<<<<<<< HEAD:backend/src/main/resources/templates/donationdisplayPage.html
 <div th:replace="fragment/footer">...</div>
+=======
+<footer>
+  <div>
+  <c>Copyright @2021-WCCI</c>
+  </div>
+</footer>
+>>>>>>> dev:backend/src/main/resources/templates/donation-display-page.html
 </html>

@@ -15,10 +15,21 @@
 <main>
 <div th:replace="fragment/navbar">...</div>
   <div class="donation-page">
+<<<<<<< HEAD
 
     <h1 class="donation-header">Business Donation Form</h1><br><br>
     <form action="/submitDonation" method="POST" class="donation-form">
       <input class="business-name" type="text" name="_business" placeholder="BUSINESS NAME"><br><br>
+=======
+    <div th:replace="navbar">...</div>
+    <h1 class="donation-header">Business Donation Form</h1><br><br>
+
+    <form action="/donations/submitDonation" method="POST" class="donation-form">
+      <label for="business">Choose your business:</label><br><br>
+      <select name="business" id="business" >
+        <option th:each="business:${businesses}"th:value="${business.getId()}"th:text="${business.getName()}"></option>
+      </select><br><br>
+>>>>>>> dev
 <!--      <input class="business-street-address" type="text" name="_" placeholder="STREET ADDRESS"><br><br>-->
       <input class="donation-item" type="text" name="_name" placeholder="ITEM"><br><br>
       <input class="donation-quantity" type="number" name="_foodQuantity" placeholder="QUANTITY">

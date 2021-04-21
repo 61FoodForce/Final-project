@@ -12,6 +12,8 @@ public class Donation {
     private Business business;
     private int foodQuantity;
     private Unit foodUnit;
+    private boolean readyForPickup =false;
+    private String donatedBy;
     public enum Unit{
         CAN,
         POUND,
@@ -77,5 +79,21 @@ public class Donation {
 
     public int getFoodQuantity() {
         return foodQuantity;
+    }
+
+    public boolean isReadyForPickup() {
+        return readyForPickup;
+    }
+
+    public void setReadyForPickup(boolean readyForPickup) {
+        this.readyForPickup = readyForPickup;
+    }
+
+    public String getDonatedBy() {
+        return donatedBy;
+    }
+
+    public void setDonatedBy(String donatedBy) {
+        this.donatedBy = donatedBy;
     }
 }
