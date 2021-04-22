@@ -24,21 +24,10 @@ public class donationsController {
     @RequestMapping("")
     public String displayAllDonations(Model model) {
 
-       // model.addAttribute("donations", donationStorage.retrieveAllDonations());
-        Iterable<Business> businesses = businessStorage.retrieveAllBusiness();
-        ArrayList<Business> forProfits = new ArrayList<Business>();
-        ArrayList<Business> nonProfits = new ArrayList<Business>();
-        for (Business business:businesses) {
-            if(business.getCharity()){
-                nonProfits.add(business);
-            }
-            else{
-                forProfits.add(business);
-            }
-        }
-        
-        model.addAttribute("businesses", forProfits);
-        model.addAttribute("nonProfits", nonProfits);
+
+    model.addAttribute("businesses", businessStorage.retrieveAllForProfit());
+    model.addAttribute("nonProfits", businessStorage.retrieveAllCharities());
+
         return "donationdisplayPage";
 
 
@@ -133,7 +122,8 @@ public class donationsController {
         }
         model.addAttribute("nonProfits", businessStorage.retrieveAllCharities());
         model.addAttribute("foundDonations", foundDonations);
-        return "/search-display-page";}
+        return "/search-display-page";
+    }
 
     @RequestMapping("/donationForm")
     public String donationForm(Model model){
@@ -143,3 +133,4 @@ public class donationsController {
         return "donationForm";
     }
 }
+

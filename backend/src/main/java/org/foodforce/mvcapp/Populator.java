@@ -95,9 +95,11 @@ public class Populator implements CommandLineRunner {
 
 
         Business business9 = new Business( "The Refectory Restaurant", "2891 E Main St", "Columbus", "Ohio", "614-700-1350", false);
+        business9.setTotalItemsDonated(7);
         this.businessStorage.saveBusiness(business9);
 
         Business business10 = new Business( "The Table", "21 E 5th Ave #101", "Columbus", "Ohio", "614-700-1355", false);
+        business10.setTotalItemsDonated(510);
         this.businessStorage.saveBusiness(business10);
 
         Donation donation15= new Donation("Canned Chicken", business8, 20, Donation.Unit.CAN);

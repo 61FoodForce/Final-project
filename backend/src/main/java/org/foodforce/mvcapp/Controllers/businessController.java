@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 
-@RequestMapping("/business")
+@RequestMapping("/businesses")
 public class businessController {
     private BusinessStorage businessStorage;
 
@@ -35,7 +35,7 @@ public class businessController {
     @RequestMapping("/rewards")
     public String displayAllDonations(Model model) {
         model.addAttribute("businesses", businessStorage.retrieveAllBusiness());
-        return "rewards-display-page";
+        return "rewardsPage";
     }
     @GetMapping("{id}")
     public String displayBusiness(@PathVariable long id, Model model) {
@@ -59,12 +59,12 @@ public class businessController {
             return "redirect:/businesses/" + businessStorage.retrieveBusinessByName(businessToAdd.getName()).getId();
         }
     }
-
-    @DeleteMapping("{id}")
-    public String deleteBusiness(@PathVariable long id){
-        businessStorage.deleteBusinessById(id);
-        return "redirect:business.html";
-    }
-
+//
+//    @DeleteMapping("{id}")
+//    public String deleteBusiness(@PathVariable long id){
+//        businessStorage.deleteBusinessById(id);
+//        return "redirect:business.html";
+//    }
+//
 
 }

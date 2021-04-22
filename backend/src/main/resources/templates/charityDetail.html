@@ -30,6 +30,13 @@
             </div>
         </div>
 
+        <h2>Ready for Pickup</h2>
+        <ul th:each="donation:${pickUpList}">
+            <!--<li><a th:href="'/donations/'+${donation.id}">-->
+            <form class="acceptButton" action="/charities/receivedItem" method="get">
+                <span th:text="${donation.foodQuantity} + ' ' + ${donation.foodUnit} + ' of ' + ${donation.name} + ' @' + ${donation.getDonatedBy()}"></span></a></li>
+                <input type="hidden" name="donationId" th:value="${donation.getId()}">
+                <Button type="submit">Received</Button>
 
         <div class="card" style="width: 18rem; margin-top: 30px">
             <div class="card-body">

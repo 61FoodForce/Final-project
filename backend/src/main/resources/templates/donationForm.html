@@ -12,35 +12,34 @@
 </head>
 
 <body>
-<main>
 <div th:replace="fragment/navbar">...</div>
-    <h1 class="donation-header">Business Donation Form</h1><br><br>
-  <div class="donation-page">
+<!--***********************************************************************-->
+<div class="donation-page">
 
-    <form action="/submitDonation" method="POST" class="donation-form">
-      <input class="business-name" type="text" name="_business" placeholder="BUSINESS NAME"><br><br>
+  <h1 class="donation-header">Business Donation Form</h1><br><br>
+  <form action="/donations/submitDonation" method="POST" class="donation-form">
+    <label for="business">Choose your business:</label><br><br>
+    <select name="business" id="business" >
+      <option th:each="business:${businesses}"th:value="${business.getId()}"th:text="${business.getName()}"></option>
+    </select><br><br>
+    <!--      <input class="business-street-address" type="text" name="_" placeholder="STREET ADDRESS"><br><br>-->
+    <input class="donation-item" type="text" name="_name" placeholder="ITEM"><br><br>
+    <input class="donation-quantity" type="number" name="_foodQuantity" placeholder="QUANTITY">
+    <select id="donation-type" name="foodUnit">
+      <option value="lbs">lbs</option>
+      <option value="gallons">gallons</option>
+      <option value="cans">cans</option>
+      <option value="box">box</option>
+      <option value="case">case</option>
+    </select><br><br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
 
+<!--***********************************************************************-->
 
-    <form action="/donations/submitDonation" method="POST" class="donation-form">
-      <label for="business">Choose your business:</label><br><br>
-      <select name="business" id="business" >
-        <option th:each="business:${businesses}"th:value="${business.getId()}"th:text="${business.getName()}"></option>
-      </select><br><br>
-
-<!--      <input class="business-street-address" type="text" name="_" placeholder="STREET ADDRESS"><br><br>-->
-      <input class="donation-item" type="text" name="_name" placeholder="ITEM"><br><br>
-      <input class="donation-quantity" type="number" name="_foodQuantity" placeholder="QUANTITY">
-      <select id="donation-type" name="_foodUnit">
-        <option value="lbs">lbs</option>
-        <option value="gallons">gallons</option>
-        <option value="cans">cans</option>
-        <option value="boxes">boxes</option>
-      </select><br><br>
-      <input type="submit" value="Submit">
-    </form>
-  </div>
-</main>
-</body>
 <div th:replace="fragment/footer">...</div>
+</body>
+
 </html>
 

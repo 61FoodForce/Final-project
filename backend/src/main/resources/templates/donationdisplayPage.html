@@ -18,8 +18,9 @@
 </head>
 
 <body>
+<div th:replace="fragment/navbar">...</div>
 <main>
-    <div th:replace="fragment/navbar">...</div>
+
 
     <h3>Food banks and Soup kitchens: Please check the donations you would like and hit Submit</h3>
 
@@ -33,7 +34,7 @@
         <form class="acceptButton" action="/donations/acceptDonation" method="get">
             <l1><h1 th:text="${business.name}"></h1></l1>
             <hr>
-            <ul th:each="donation: ${business.getDonations()}">
+            <ul style="list-style: none;" th:each="donation: ${business.getDonations()}">
 
                 <li>
                     <input type="checkbox" class="donationItem" name="id" th:value="${donation.getId()}">

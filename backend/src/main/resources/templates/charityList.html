@@ -11,12 +11,12 @@
     <title>List of charities</title>
 </head>
 <body>
-
-<main>
 <div th:replace="fragment/navbar">...</div>
+<main>
+
 <h1>List Of All Charities</h1>
 <br>
-<ul class="list-of-charities" th:each="charity:${charities}">
+<ul class="list-of-charities" style="list-style:none;" th:each="charity:${charities}">
     <li th:text="${charity.name} "></li>
 
     <a th:href="@{'charities/' + ${charity.id}}">Click Here for more details</a></li>
