@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!--<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">-->
 
 <head>
     <meta charset="UTF-8">
@@ -16,12 +17,7 @@
 <div th:replace="fragment/navbar">...</div>
 
 
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="margin-top: -30px; margin-bottom: 30px">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
+
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="/images/volunteer.jpg" class="d-block w-100" alt="...">
@@ -32,16 +28,26 @@
 </div>
 <div class="tiers">
 
-    <h1 class="medal-header"><img class="medal" src="images/gold-medal.jpg"> Gold Level Contributors</h1>
+    <h1 class="medal-header"><img class="medal" src="../images/gold-medal.jpg"> Gold Level Contributors</h1>
     <p class="medal-description">Thank you for making 500 donations!</p>
+    <ul th:each="business : ${businesses}" th:href="@{'/rewards'}" >
+        <span th:if="${business.getTotalItemsDonated() ge 10}"><p th:text="${business.name}"></p></span>
+    </ul>
 
-    <h1 class="medal-header"><img class="medal" src="images/silver-medal.jpg"> Silver Level Contributors</h1>
+    <h1 class="medal-header"><img class="medal" src="../images/silver-medal.jpg"> Silver Level Contributors</h1>
     <p class="medal-description">Thank you for making 250 donations!
     </p>
+    <ul th:each="business : ${businesses}" th:href="@{'/rewards'}" >
+        <span th:if="${business.getTotalItemsDonated() ge 5 and business.getTotalItemsDonated() lt 10}"><p th:text="${business.name}"></p></span>
+    </ul>
 
-    <h1 class="medal-header"><img class="medal" src="images/bronze-medal.jpg"> Bronze Level Contributors</h1>
+
+        <h1 class="medal-header"><img class="medal" src="../images/bronze-medal.jpg"> Bronze Level Contributors</h1>
     <p class="medal-description">Thank you for making 100 donations!
     </p>
+        <ul th:each="business : ${businesses}" th:href="@{'/rewards'}" >
+            <span th:if="${business.getTotalItemsDonated() gt 1 and business.getTotalItemsDonated() lt 5}"><p th:text="${business.name}"></p></span>
+        </ul>
 
 </div>
 <div th:replace="fragment/footer">...</div>

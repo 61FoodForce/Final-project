@@ -47,10 +47,10 @@ public class HomeController {
 
         return "donationForm";
     }
-//
-//    @GetMapping("donation-display-page")
-//    public String donationdisplayPage() {
-//
-//        return "donationdisplayPage";
-//    }
+
+    @GetMapping("signupform")
+    public String signupform() {
+
+        return "signupform";
+    }
 }

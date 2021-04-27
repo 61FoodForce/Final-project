@@ -1,62 +1,63 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Available Donations</title>
+    <title>Available Donations</title>
 
-  <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-  <title>Donation Display Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <title>Donation Display Page</title>
 </head>
 
 <body>
+<div th:replace="fragment/navbar">...</div>
 <main>
-  <div th:replace="fragment/navbar">...</div>
-
-  <h3>Food banks and Soup kitchens: Please check the donations you would like and hit Submit</h3>
 
 
-  <form class="search-form" action="/donations/searchDonations">
-    <input type="text" class="search-box" name="_search" placeholder="SEARCH DONATIONS">
-    <input type="submit">
-  </form>
-
-  <ul class="business-donations-list" th:each="business : ${businesses}" th:href="@{'/donations'}">
-    <form class="acceptButton" action="/donations/acceptDonation" method="get">
-      <l1><h1 th:text="${business.name}"></h1></l1>
-      <hr>
-      <ul th:each="donation: ${business.getDonations()}">
-
-        <li>
-          <input type="checkbox" class="donationItem" name="id" th:value="${donation.getId()}">
-          <label th:for="${donation.getId()}"
-                 th:text="${donation.foodQuantity} + ' ' + ${donation.foodUnit} + ' of ' + ${donation.name}"> </label>
-          <br>
-        </li>
-      </ul>
-      <br><br>
-
-      <label for="charity">Choose your charity:</label>
-      <select name="charity" id="charity">
-        <option th:each="nonProfit : ${nonProfits}" th:value="${nonProfit.getId()}"
-                th:text="${nonProfit.getName()}"></option>
-      </select>
+    <h3>Food banks and Soup kitchens: Please check the donations you would like and hit Submit</h3>
 
 
-      <!--    <input type="text" name="_charity" placeholder="CHARITY ACCEPTING">-->
-      <input type="hidden" name="_business" th:value="${business.name}">
-      <input type="submit" text="ACCEPT">
-
+    <form class="search-form" action="/donations/searchDonations">
+        <input type="text" class="search-box" name="_search" placeholder="SEARCH DONATIONS">
+        <input type="submit">
     </form>
-  </ul>
+
+    <ul class="business-donations-list" th:each="business : ${businesses}" th:href="@{'/donations'}">
+        <form class="acceptButton" action="/donations/acceptDonation" method="get">
+            <l1><h1 th:text="${business.name}"></h1></l1>
+            <hr>
+            <ul style="list-style: none;" th:each="donation: ${business.getDonations()}">
+
+                <li>
+                    <input type="checkbox" class="donationItem" name="id" th:value="${donation.getId()}">
+                    <label th:for="${donation.getId()}"
+                           th:text="${donation.foodQuantity} + ' ' + ${donation.foodUnit} + ' of ' + ${donation.name}"> </label>
+                    <br>
+                </li>
+            </ul>
+            <br><br>
+
+            <label for="charity">Choose your charity:</label>
+            <select name="charity" id="charity">
+                <option th:each="nonProfit : ${nonProfits}" th:value="${nonProfit.getId()}"
+                        th:text="${nonProfit.getName()}"></option>
+            </select>
+
+
+            <!--    <input type="text" name="_charity" placeholder="CHARITY ACCEPTING">-->
+            <input type="hidden" name="_business" th:value="${business.name}">
+            <input type="submit" text="ACCEPT">
+
+        </form>
+    </ul>
 </main>
 </body>
 

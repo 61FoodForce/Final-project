@@ -5,19 +5,20 @@ body {
     background-image: url(../images/backg1.jpg);
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .sign-up-form {
   width: 300px;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
   background: #fff;
-  padding: 20px;
-  margin: 8% auto 0;
+  /*padding: 20px;*/
+  /*margin: 8% auto 0;*/
   text-align: center;
 
 }
 .sign-up-form h1 {
-  color: #1c8adb;
+  color: #81b214;
   margin-bottom: 30px;
 }
 .input-box {
@@ -40,24 +41,27 @@ button {
   cursor: pointer;
 }
 .signup-btn {
-  background-color: #1c8adb;
+  background-color: #81b214;
 
 }
-.gmail-btn {
-  background-color: #21afde;
+/*.gmail-btn {*/
+/*  background-color: #81b214;*/
 
-}
-a {
-  text-decoration: none;
+/*}*/
+/*a {*/
+/*  text-decoration: none;*/
 
-}
-hr {
-  margin-top: 20px;
-  width: 80%
-}
-.or {
-  background: #fff;
-  width: 30px;
-  margin: -19px auto 10px;
+/*}*/
+/*hr {*/
+/*  margin-top: 20px;*/
+/*  width: 80%*/
+/*}*/
+/*.or {*/
+/*  background: #fff;*/
+/*  width: 30px;*/
+/*  margin: -19px auto 10px;*/
+
+/*}*/
+.sign-up-main{
 
 }

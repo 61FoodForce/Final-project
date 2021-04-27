@@ -87,6 +87,7 @@
     text-align: center;
     padding: 20px;
     background-color: rgba(28, 29, 28, 0.4);
+    color: white;
   }
 
   .donation-page{
@@ -110,11 +111,11 @@
   }
 
   select{
-    color: white;
+    color: black;
   } 
 
   option{
-    color: white;
+    color: black;
   }
 
   .donation-type{
@@ -133,6 +134,10 @@
     color: var(--text-color);
     height: 40px;
     margin-top: 20px;
+    /*width: 100%;*/
+    /*position: fixed;*/
+    /*bottom: 0;*/
+
   }
 
   /* Styles the image container's header */
@@ -216,18 +221,20 @@
     font-size: 75px;
     margin-left: 25px;
     padding-bottom: 50px;
+    color: white;
   }
 
   .food-waste-container{
     background-image: url("../images/rottenfruit.jpg");
     background-size: 100% auto;
-    height: 500px;
+    height: 400px;
     background-position: center;
   }
 
   .food-waste-container-text{
-    background: rgba(28, 29, 28, 0.4);
-    margin-left: 10px;
+    background: rgba(28, 29, 28, 0.6);
+    margin-left: 25px;
+    color: white;
   }
  
   .hunger-header{
@@ -238,12 +245,13 @@
     margin-left: 25px;
     padding-bottom: 50px;
     padding-top: 10px;
+    color: white;
   }
   
   .hunger-container{
     background-image: url("../images/childcereal.jpg");
     background-size: 100% auto;
-    height: 500px;
+    height: 425px;
     background-position: center;
     
   }
@@ -255,8 +263,9 @@
   }
 
   .hunger-container-text{
-    background: rgba(28, 29, 28, 0.4);
+    background: rgba(28, 29, 28, 0.6);
     margin-left: 10px;
+    color: white;
   }
 
   .hunger-question{
@@ -267,13 +276,9 @@
     background:var(--third-color);
     padding-top: 33px;
   }
-  
-  .food-to-people{
-    background: var(--primary-color);
-  }
+
 
   .food-to-people-header{
-    background: var(--primary-color);
     padding: 10px;
   }
 
@@ -365,24 +370,45 @@
   .business-list{
     list-style-type: none;
   }
+/* foodReduction background */
+.food_waste{
+  background-image:url("../images/foodWaste.jpg");
+  background-size: 100% auto;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-attachment:fixed ;
+}
+._main_container_waste{
+  background: rgba(199, 199, 199, .9);
+  max-width: 700px;
+}
+.foodReduction_header{
+  display: flex;
+  justify-content: center;
+}
+.foodReduction_header_restaurants{
+  display: flex;
+  justify-content: center;
+}
+.charity_location{
+  padding: 20px;
+  margin: 20px;
+}
+.charity_card{
+  display:flex;
+  justify-content: center;
 
+}
+.card{
+  margin: 0 20px 0 0;
+}
 
-  /* foodReduction background */
-  .food_waste{
-    background-image:url("../images/foodWaste.jpg");
-    background-size: 100% auto;
-    height: 400px;
-    ;
-  }
-  ._main_container_waste{
-    background: rgba(199, 199, 199, .9);
-    max-width: 700px;
-  }
-  .foodReduction_header{
-    display: flex;
-    justify-content: center;
-  }
-  .foodReduction_header_restaurants{
-    display: flex;
-    justify-content: center;
-  }
+.carousel-text{
+  background-color: rgba(28, 29, 28, 0.6);
+  padding: 10px;
+  width: 100%;
+}
+
+.carousel-text-p{
+  background-color: rgba(28, 29, 28, 0.6);
+}
