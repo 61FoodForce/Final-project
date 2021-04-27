@@ -1,34 +1,38 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head>
-  <meta charset="UTF-8">
-  <title>Rewards Display Page</title>
-  <link rel="stylesheet" href="/css/style.css">
+<!--<!DOCTYPE html>-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>Rewards Display Page</title>-->
+<!--  <link rel="stylesheet" href="/css/style.css">-->
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div th:replace="navbar">...</div>
-<h1 class="rewards-headers">Gold</h1>
-<hr>
-<ul th:each="business : ${businesses}" th:href="@{'/rewards'}" >
-  <span th:if="${business.getTotalItemsDonated() ge 10}"><p th:text="${business.name}"></p></span>
-</ul>
-<h1 class="rewards-headers">Silver</h1>
-<hr>
-<ul th:each="business : ${businesses}" th:href="@{'/rewards'}" >
-  <span th:if="${business.getTotalItemsDonated() ge 5 and business.getTotalItemsDonated() lt 10}"><p th:text="${business.name}"></p></span>
-</ul>
-<h1 class="rewards-headers">Bronze</h1>
-<hr>
-<ul th:each="business : ${businesses}" th:href="@{'/rewards'}" >
-  <span th:if="${business.getTotalItemsDonated() gt 1 and business.getTotalItemsDonated() lt 5}"><p th:text="${business.name}"></p></span>
-</ul>
-</body>
-<footer>
-  <div>
-  <c>Copyright @2021-WCCI</c>
-  </div>
-</footer>
-</html>
+<!--    <link rel="preconnect" href="https://fonts.gstatic.com">-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">-->
+<!--</head>-->
+<!--<body>-->
+<!--<<<<<<< HEAD-->
+<!--<main>-->
+<!--<h1>Gold</h1>-->
+<!--=======-->
+<!--  <div th:replace="navbar">...</div>-->
+<!--<h1 class="rewards-headers">Gold</h1>-->
+<!--<hr>-->
+<!--&gt;>>>>>> dev-->
+
+<!--<h1 class="rewards-headers">Silver</h1>-->
+<!--<hr>-->
+<!--<ul th:each="business : ${businesses}" th:href="@{'/rewards'}" >-->
+<!--  <span th:if="${business.getTotalItemsDonated() ge 5 and business.getTotalItemsDonated() lt 10}"><p th:text="${business.name}"></p></span>-->
+<!--</ul>-->
+<!--<h1 class="rewards-headers">Bronze</h1>-->
+<!--<hr>-->
+<!--<ul th:each="business : ${businesses}" th:href="@{'/rewards'}" >-->
+<!--  <span th:if="${business.getTotalItemsDonated() gt 1 and business.getTotalItemsDonated() lt 5}"><p th:text="${business.name}"></p></span>-->
+<!--</ul>-->
+<!--</main>-->
+<!--</body>-->
+<!--<footer>-->
+<!--  <div>-->
+<!--  <c>Copyright @2021-WCCI</c>-->
+<!--  </div>-->
+<!--</footer>-->
+<!--</html>-->

@@ -24,10 +24,13 @@ public class donationsController {
     @RequestMapping("")
     public String displayAllDonations(Model model) {
 
-            model.addAttribute("businesses", businessStorage.retrieveAllForProfit());
-            model.addAttribute("nonProfits", businessStorage.retrieveAllCharities());
 
-        return "donation-display-page";
+    model.addAttribute("businesses", businessStorage.retrieveAllForProfit());
+    model.addAttribute("nonProfits", businessStorage.retrieveAllCharities());
+
+        return "donationdisplayPage";
+
+
     }
 
     //Allows user to search donations
@@ -119,7 +122,8 @@ public class donationsController {
         }
         model.addAttribute("nonProfits", businessStorage.retrieveAllCharities());
         model.addAttribute("foundDonations", foundDonations);
-        return "/search-display-page";}
+        return "/search-display-page";
+    }
 
     @RequestMapping("/donationForm")
     public String donationForm(Model model){
@@ -129,3 +133,4 @@ public class donationsController {
         return "donationForm";
     }
 }
+

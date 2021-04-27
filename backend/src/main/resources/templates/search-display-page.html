@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Search Results</title>
-  <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="/css/style.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 </head>
 <body>
-  <div th:replace="navbar">...</div>
-  <h1 th:if="${foundDonations.size() == 0}">0 Results</h1>
-  <h1 th:if="${foundDonations.size() gt 0}">Results</h1>
-  <ul class="business-donations-list" th:each="donation:${foundDonations}" th:href="@{'/donations'}" >
-  <form class="acceptButton" action="/donations/acceptDonation" method="get">
-    <l1><h1 th:text="${donation.getBusiness().name}"></h1></l1>
+<div th:replace="fragment/navbar">...</div>
+<!--  <div th:replace="navbar">...</div>-->
+<div style="width: 100%; text-align: center;">
+<h1 th:if="${foundDonations.size() == 0}">0 Results</h1>
+<h1 th:if="${foundDonations.size() gt 0}">Results</h1>
+</div>
+<ul class="business-donations-list" th:each="donation:${foundDonations}" th:href="@{'/donations'}" style="list-style: none;">
 
+    <form class="acceptButton" action="/donations/acceptDonation" method="get">
+        <l1><h1 th:text="${donation.getBusiness().name}"></h1></l1>
+        <hr>
+        <li>
 
-      <li>
+            <input type="checkbox" class="donationItem" name="id" th:value="${donation.getId()}">
+            <label th:for="${donation.getId()}"
+                   th:text="${donation.getFoodQuantity()} + ' ' + ${donation.getFoodUnit()} + ' of ' + ${donation.getName()}"> </label>
+            <br>
+        </li>
 
-        <input type="checkbox" class="donationItem"  name="id" th:value="${donation.getId()}">
-        <label th:for="${donation.getId()}" th:text="${donation.getFoodQuantity()} + ' ' + ${donation.getFoodUnit()} + ' of ' + ${donation.getName()}"> </label>
-        <br>
-      </li>
+        <br><br>
+        <label for="charity">Choose your charity:</label>
+        <select name="charity" id="charity">
+            <option th:each="nonProfit : ${nonProfits}" th:value="${nonProfit.getId()}"
+                    th:text="${nonProfit.getName()}"></option>
+        </select>
+        <input type="hidden" name="_business" th:value="${donation.getBusiness().name}">
+        <input type="submit" text="ACCEPT">
 
-    <br><br>
-      <label for="charity">Choose your charity:</label>
-      <select name="charity" id="charity" >
-        <option th:each="nonProfit : ${nonProfits}" th:value="${nonProfit.getId()}" th:text="${nonProfit.getName()}"></option>
-      </select>
-    <input type="hidden" name="_business" th:value="${donation.getBusiness().name}">
-    <input type="submit" text="ACCEPT">
-
-  </form>
-  </ul>
+    </form>
+</ul>
+<div th:replace="fragment/footer">...</div>
 </body>
+
 </html>
