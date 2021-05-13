@@ -370,6 +370,11 @@
   .business-list{
     list-style-type: none;
   }
+  .business-list-main{
+    background-image: url(/images/FoodPic1.jpg);
+    background-repeat: no-repeat;
+
+  }
 /* foodReduction background */
 .food_waste{
   background-image:url("../images/foodWaste.jpg");
@@ -411,4 +416,8 @@
 
 .carousel-text-p{
   background-color: rgba(28, 29, 28, 0.6);
+}
+.charity-list-main{
+  background-image: url(/images/DonationPic2.jpg);
+  background-repeat: no-repeat;
 }
