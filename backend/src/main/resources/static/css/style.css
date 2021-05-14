@@ -369,13 +369,17 @@
   /* Style for business details */ 
   .business-list{
     list-style-type: none;
+    font-family:fantasy;
   }
   .business-list-main{
     background-image: url(/images/FoodPic1.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
 
   }
-/* foodReduction background */
+  .list-of-charities{
+    font-family: fantasy;
+  }
 .food_waste{
   background-image:url("../images/foodWaste.jpg");
   background-size: 100% auto;
@@ -398,10 +402,12 @@
 .charity_location{
   padding: 20px;
   margin: 20px;
+ 
 }
 .charity_card{
   display:flex;
   justify-content: center;
+  
 
 }
 .card{
@@ -420,4 +426,10 @@
 .charity-list-main{
   background-image: url(/images/DonationPic2.jpg);
   background-repeat: no-repeat;
+}
+.donation-display-page{
+  background-color:rgba(255, 217, 0, 0.842);
+}
+.search-form{
+  display: center;
 }
